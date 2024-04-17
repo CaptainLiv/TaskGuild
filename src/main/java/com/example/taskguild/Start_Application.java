@@ -18,12 +18,13 @@ public class Start_Application extends Application {
         // Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
         String view = "create-profile-view.fxml";
         if(check_profile()){
-            view = "standard-view.fxml";
+            view = "create-profile-view.fxml";
+            //view = "standard-view.fxml";
             System.out.println(view);
         }else{
             System.out.println(view);
         }
-       FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
+        FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("TaskGuild");
         stage.setScene(scene);
