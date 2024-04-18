@@ -51,13 +51,15 @@ public class Controller_create_profile_view {
     void avatar_confirm(MouseEvent event){
         System.out.println(view_avatar.getImage().getUrl());
 
-        //sichern des Avatars
-       /* if(!txt_name.getText().isEmpty() && view_avatar.getImage().getUrl().equals("src/main/java/com/example/taskguild/pictures/default.jpg")){ //bedingung definieren vor dem Speichern
+        // sichern des Avatars
+        if(!txt_name.getText().isEmpty() && !view_avatar.getImage().getUrl().equals("src/main/java/com/example/taskguild/pictures/default.jpg")){ //bedingung definieren vor dem Speichern
             Avatar neuer_avatar = new Avatar(txt_name.getText(),view_avatar.getImage().getUrl());
+            Avatar.save(neuer_avatar);
+            System.out.println("TEST");
 
             }else{
             System.out.println(1);
-        }*/
+        }
 
     }
 
