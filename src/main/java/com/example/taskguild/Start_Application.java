@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import com.example.taskguild.Todo.Type;
+
 import java.io.File;
 
 public class Start_Application extends Application {
@@ -29,6 +32,11 @@ public class Start_Application extends Application {
         stage.setTitle("TaskGuild");
         stage.setScene(scene);
         stage.show();
+
+        // Todo todo = new Todo("name", "description", "endDate", Type.Simple, 2, 3 );
+        // Todoliste todolist = new Todoliste();
+        // todolist.add_item(todo);
+        
     }
 
     public static boolean check_profile() {
