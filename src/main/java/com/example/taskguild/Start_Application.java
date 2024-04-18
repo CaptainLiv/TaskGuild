@@ -19,19 +19,21 @@ public class Start_Application extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
-        String view = "create-profile-view.fxml";
-        if(check_profile()){
-            view = "create-profile-view.fxml";
-            //view = "standard-view.fxml";
-            System.out.println(view);
-        }else{
-            System.out.println(view);
-        }
-        FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("TaskGuild");
-        stage.setScene(scene);
-        stage.show();
+        // String view = "create-profile-view.fxml";
+        // if(check_profile()){
+        //     view = "create-profile-view.fxml";
+        //     view = "standard-view.fxml";
+        //     System.out.println(view);
+        // }else{
+        //     System.out.println(view);
+        // }
+        // FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
+        // Scene scene = new Scene(fxmlLoader.load());
+        // stage.setTitle("TaskGuild");
+        // stage.setScene(scene);
+        // stage.show();
+
+        Avatar.load();
 
         // Todo todo = new Todo("name", "description", "endDate", Type.Simple, 2, 3 );
         // Todoliste todolist = new Todoliste();
