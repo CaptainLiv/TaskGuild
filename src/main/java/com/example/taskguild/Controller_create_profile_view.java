@@ -13,7 +13,7 @@ import java.io.*;
 public class Controller_create_profile_view {
 
     public static final String filepath_profile = "profile.txt";
-    public String path_avatar = "src/main/java/com/example/taskguild/pictures/a1.jpg";
+    public String path_avatar = "src/main/java/com/example/taskguild/pictures/default.jpg";
 
 
     @FXML
@@ -43,30 +43,21 @@ public class Controller_create_profile_view {
     @FXML
     private ImageView view_avatar;
 
+
     @FXML
     private TextField txt_name;
 
     @FXML
     void avatar_confirm(MouseEvent event){
+        System.out.println(view_avatar.getImage().getUrl());
+
         //sichern des Avatars
-        if(!txt_name.getText().isEmpty()){ //bedingung definieren vor dem Speichern
+       /* if(!txt_name.getText().isEmpty() && view_avatar.getImage().getUrl().equals("src/main/java/com/example/taskguild/pictures/default.jpg")){ //bedingung definieren vor dem Speichern
             Avatar neuer_avatar = new Avatar(txt_name.getText(),view_avatar.getImage().getUrl());
 
-            String data = "This is a text inside the file.";
-
-            try {
-                PrintWriter output = new PrintWriter(filepath_profile);
-                output.print(neuer_avatar.toString());
-                output.close();
-                System.out.println("End");
-            }
-            catch(Exception e) {
-                e.getStackTrace();
-            }
-
-        }else{
+            }else{
             System.out.println(1);
-        }
+        }*/
 
     }
 
