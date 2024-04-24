@@ -3,6 +3,8 @@ package com.example.taskguild;
 import java.io.*;
 import java.nio.file.Files;
 
+import com.google.gson.Gson;
+
 public class Avatar {
         public String name;
         public String avatar_picture;
@@ -34,40 +36,29 @@ public class Avatar {
         }
 
         public static void save(Avatar avatar) {
-        //        try {
-        //         FileOutputStream f = new FileOutputStream(filepath_profile);
-        //         ObjectOutputStream o = new ObjectOutputStream(f);
-
-        //          o.writeObject(avatar);
-        //          o.writeUTF("TEST");
-
-        //          o.close();
-        //          f.close();
-        //        } 
-        //        catch(IOException e) {
-        //                 e.printStackTrace();
-        //                 System.out.println("Error");
-        //        }
-        try {
-                FileWriter myWriter = new FileWriter(filepath_profile);
-                myWriter.write(avatar.name +"," + avatar.avatar_picture + "," + avatar.level + "," + avatar.xp);
-                myWriter.close();
-                System.out.println("Successfully wrote to the file.");
-              } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-              }
+        
+                Gson gson = new Gson();
+                String json = gson.toJson(avatar);
+                try {
+                        FileWriter myWriter = new FileWriter(filepath_profile);
+                        myWriter.write(json);
+                        myWriter.close();
+                        System.out.println("Successfully wrote to the file.");
+                } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                }
         }
 
         public static void load() {
+                
+
                 try(BufferedReader br = new BufferedReader(new FileReader(filepath_profile))) {
                         
-                        String line = br.readLine();
-                        String[] array =  line.split(",");
-                        Avatar avatar = new Avatar(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]));
-                        System.out.println(avatar.toString());
-                        
-
+                        Gson gson = new Gson();
+                        String json = br.readLine();
+                        Avatar avatar = gson.fromJson(json, Avatar.class);
+                        System.out.println(avatar.xp);
                     }
                     catch (IOException e) {
                         e.printStackTrace();
