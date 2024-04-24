@@ -1,1 +1,1 @@
-This is a text inside the file.
+{"name":"test","avatar_picture":"test","xp":23,"level":2}
