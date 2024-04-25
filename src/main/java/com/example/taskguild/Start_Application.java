@@ -41,12 +41,9 @@ public class Start_Application extends Application {
         Todo todo2 = new Todo("name", "dec", "2", Type.Bossfight, 2, 2);
         Todoliste todolist = new Todoliste();
         todolist.add_item(todo1);
-        // todolist.add_item(todo2);
-        // System.out.println(todolist.todolist.get(0));
-        // Todoliste.save(todolist);
-        // Todo todo = new Todo("name", "description", "endDate", Type.Simple, 2, 3 );
-        // Todoliste todolist = new Todoliste();
-        // todolist.add_item(todo);
+        todolist.add_item(todo2);
+        Todoliste.save(todolist);
+        Todoliste.load();
         
     }
 
