@@ -1,1 +1,1 @@
-{"name":"test","avatar_picture":"test","xp":23,"level":2}
+{"name":"test","avatar_picture":"test","xp":23,"xp_needed":0,"level":2}
