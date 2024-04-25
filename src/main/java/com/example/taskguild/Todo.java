@@ -1,5 +1,6 @@
 package com.example.taskguild;
-import java.time.*; 
+import java.time.*;
+import java.util.Date; 
 
 public class Todo {
     
@@ -10,7 +11,7 @@ public class Todo {
 
     public String name;
     public String description;
-    public LocalDateTime startDate;
+    public String startDate;
     public String endDate;
     public boolean is_done;
     public Type type;
@@ -19,7 +20,7 @@ public class Todo {
 
     public Todo(String name, String description, String endDate, Type type, int difficulty, int hp_boss) {
         
-        this.startDate =LocalDateTime.now();
+        this.startDate = LocalDateTime.now().toString();
         this.name = name;
         this.description = description;
         this.endDate = endDate;
