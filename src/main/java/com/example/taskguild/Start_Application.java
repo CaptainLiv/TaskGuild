@@ -32,10 +32,8 @@ public class Start_Application extends Application {
         // stage.setTitle("TaskGuild");
         // stage.setScene(scene);
         // stage.show();
-        Avatar avatar = new Avatar("test", "test", 23, 2);
-        Avatar.save(avatar);
-        Avatar.load();
-
+        // Avatar.save(avatar);
+        // Avatar.load();
         // Todo todo = new Todo("name", "description", "endDate", Type.Simple, 2, 3 );
         // Todoliste todolist = new Todoliste();
         // todolist.add_item(todo);
