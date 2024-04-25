@@ -1,10 +1,14 @@
 package com.example.taskguild;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
+
+
+import com.google.gson.Gson;
 
 public class Todoliste {
     ArrayList<Todo> todolist = new ArrayList<Todo>();
+    public static final String filepath_todolist = "todolist.txt";
 
     public void add_item (Todo item) {
         todolist.add(item);
@@ -14,12 +18,32 @@ public class Todoliste {
         todolist.remove(item);
     }
 
-    public void save() {
-        
+    public static void save(Todoliste todolist) {
+                Gson gson = new Gson();
+                String json = gson.toJson(todolist);
+                System.out.println(json);
+                try {
+                        FileWriter myWriter = new FileWriter(filepath_todolist);
+                        myWriter.write(json);
+                        myWriter.close();
+                        System.out.println("Successfully wrote to the file.");
+                } catch (IOException e) {
+                        System.out.println("An error occurred.");
+                        e.printStackTrace();
+                }
     }
 
-    public void load() {
-
+    public static void load() {
+        try(BufferedReader br = new BufferedReader(new FileReader(filepath_todolist))) {
+                        
+            Gson gson = new Gson();
+            String json = br.readLine();
+            Todoliste todolist = gson.fromJson(json, Todoliste.class);
+            System.out.println(todolist.todolist.get(1).name);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -22,6 +22,7 @@ public class Start_Application extends Application {
         // String view = "create-profile-view.fxml";
         // if(check_profile()){
         //     view = "create-profile-view.fxml";
+        //     Hier Checken ob Todoliste existiert
         //     view = "standard-view.fxml";
         //     System.out.println(view);
         // }else{
@@ -32,13 +33,17 @@ public class Start_Application extends Application {
         // stage.setTitle("TaskGuild");
         // stage.setScene(scene);
         // stage.show();
-        Avatar avatar = new Avatar("test", "test", 23, 2);
-        Avatar.save(avatar);
-        Avatar.load();
+        // Avatar avatar = new Avatar("name", 23, 23,"", "", "", new Attribut(1,1,2,3,4,5,6));
+        // Avatar.save(avatar);
+        // Avatar.load();
 
-        // Todo todo = new Todo("name", "description", "endDate", Type.Simple, 2, 3 );
-        // Todoliste todolist = new Todoliste();
-        // todolist.add_item(todo);
+        Todo todo1 = new Todo("name", "dec", "2", Type.Bossfight, 2, 2);
+        Todo todo2 = new Todo("name", "dec", "2", Type.Bossfight, 2, 2);
+        Todoliste todolist = new Todoliste();
+        todolist.add_item(todo1);
+        todolist.add_item(todo2);
+        Todoliste.save(todolist);
+        Todoliste.load();
         
     }
 
@@ -53,6 +58,7 @@ public class Start_Application extends Application {
                }
             }catch (IOException e){
                 e.printStackTrace();
+                System.out.println("aisjd");
             }
         }
         return does_profile_exists;
