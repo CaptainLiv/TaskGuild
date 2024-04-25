@@ -11,12 +11,13 @@ public class Avatar {
         public String head;
         public String bottom;
         public String tops;
+        public Attribut attributes;
         public int xp;
         public int xp_needed;
         public int level;
         public static final String filepath_profile = "profile.txt";
 
-        public Avatar(String name, String head, String bottom, String tops){
+        public Avatar(String name, String head, String bottom, String tops, Attribut attributes){
                 this.name = name;
                 this.xp = 0;
                 this.level = 0;
@@ -24,14 +25,22 @@ public class Avatar {
                 this.head = head;
                 this.bottom = bottom;
                 this.tops = tops;
+                this.attributes.endurance = 0;
+                this.attributes.hp = 0;
+                this.attributes.intelligence = 0;
+                this.attributes.luck = 0;
+                this.attributes.speed = 0;
+                this.attributes.strength = 0;
+                this.attributes.wisedom = 0;
         }
-        public Avatar(String name, int xp, int level, String head, String bottom, String tops){
+        public Avatar(String name, int xp, int level, String head, String bottom, String tops, Attribut attributes){
                 this.name = name;
                 this.xp = xp;
                 this.level = level;
                 this.head = head;
                 this.bottom = bottom;
                 this.tops = tops;
+                this.attributes = attributes;
         }
 
         @Override
@@ -44,7 +53,6 @@ public class Avatar {
         }
 
         public static void save(Avatar avatar) {
-        
                 Gson gson = new Gson();
                 String json = gson.toJson(avatar);
                 try {
@@ -66,7 +74,7 @@ public class Avatar {
                         Gson gson = new Gson();
                         String json = br.readLine();
                         Avatar avatar = gson.fromJson(json, Avatar.class);
-                        System.out.println(avatar.xp);
+                        System.out.println(avatar.attributes.wisedom);
                     }
                     catch (IOException e) {
                         e.printStackTrace();
@@ -92,19 +100,19 @@ public class Avatar {
         public void task_completed(int difficulty, Type task_type) {
                 switch(difficulty) {
                         case 1: if (task_type.toString() == "Simple") {
-                                        xp = xp + 1;
+                                        xp = xp + attributes.intelligence + 1;
                                 } else {
-                                       xp = xp + 2; 
+                                       xp = xp + attributes.intelligence + 2; 
                                 }
                         case 2: if (task_type.toString() == "Simple") {
-                                        xp = xp + 1 * difficulty;
+                                        xp = xp + attributes.intelligence + 1 * difficulty;
                                 } else {
-                                       xp = xp + 2 *difficulty; 
+                                       xp = xp + attributes.intelligence + 2 *difficulty; 
                                 }
                         case 3: if (task_type.toString() == "Simple") {
-                                        xp = xp + 1 * difficulty;
+                                        xp = xp + attributes.intelligence + 1 * difficulty;
                                 } else {
-                                       xp = xp + 2 *difficulty; 
+                                       xp = xp + attributes.intelligence + 2 *difficulty; 
                                 }
                 }
                 check_level_up();

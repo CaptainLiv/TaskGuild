@@ -17,7 +17,7 @@ public class Todo {
     public int difficulty;
     public int hp_boss;
 
-    public Todo(String name, String description, String endDate, Type type, int difficulty, int hp_boss ) {
+    public Todo(String name, String description, String endDate, Type type, int difficulty, int hp_boss) {
         
         this.startDate =LocalDateTime.now();
         this.name = name;

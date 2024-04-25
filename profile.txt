@@ -1,1 +1,1 @@
-{"name":"test","avatar_picture":"test","xp":23,"xp_needed":0,"level":2}
+{"name":"name","head":"","bottom":"","tops":"","attributes":{"strength":1,"luck":1,"speed":2,"hp":3,"endurance":4,"intelligence":5,"wisedom":6},"xp":23,"xp_needed":0,"level":23}
