@@ -16,46 +16,28 @@ public class Start_Application extends Application {
     //String File name als auch Pfad
     public static final String filepath_profile = "profile.txt";
 
-    MediaPlayer mp;
+    @SuppressWarnings("exports")
+    public static MediaPlayer mp;
     // Start methode des Fensters
     @Override
     public void start(Stage stage) throws IOException {
-        File file = new File("src/main/resources/com/example/taskguild/musik/Avatar_umziehenErstellen_Hintergrundmusik.mp3");
-        Media media = new Media(file.toURI().toString());
-        try{
-            mp = new MediaPlayer(media);
-            mp.setVolume(0.05);
-            Runnable onEnd = new Runnable() {
-                @Override
-                public void run() {
-                    mp.dispose();
-                    mp = new MediaPlayer(media);
-                    mp.setVolume(0.05);
-                    mp.play();
-                    mp.setOnEndOfMedia(this);
-                }
-            };
-            mp.setOnEndOfMedia(onEnd);
-            mp.play();
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        play_music("Avatar_umziehenErstellen_Hintergrundmusik");
 
 
         //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
-         String view = "create-profile-view.fxml";
+         String view = "character_creator_v2.fxml";
          //     Hier Checken ob Todoliste existiert
          if(check_profile()){
                 view = "mainframe.fxml";
                 // view = "create-profile-view.fxml";
-            
+                mp.dispose();
+                play_music("Hintergrundmusik(ToDo_Liste)");
              System.out.println(view);
          }else{
              System.out.println(view);
          }
          change_window(view, stage);
+         
          
          
 
@@ -88,6 +70,31 @@ public class Start_Application extends Application {
             }
         }
         return does_profile_exists;
+    }
+
+    public static void play_music(String path) {
+        File file = new File("src/main/resources/com/example/taskguild/musik/" + path + ".mp3");
+        Media media = new Media(file.toURI().toString());
+        try{
+            mp = new MediaPlayer(media);
+            mp.setVolume(0.05);
+            Runnable onEnd = new Runnable() {
+                @Override
+                public void run() {
+                    mp.dispose();
+                    mp = new MediaPlayer(media);
+                    mp.setVolume(0.05);
+                    mp.play();
+                    mp.setOnEndOfMedia(this);
+                }
+            };
+            mp.setOnEndOfMedia(onEnd);
+            mp.play();
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
