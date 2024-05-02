@@ -48,7 +48,7 @@ public class Start_Application extends Application {
          String view = "create-profile-view.fxml";
          //     Hier Checken ob Todoliste existiert
          if(check_profile()){
-                view = "standard-view.fxml";
+                view = "mainframe.fxml";
                 // view = "create-profile-view.fxml";
             
              System.out.println(view);

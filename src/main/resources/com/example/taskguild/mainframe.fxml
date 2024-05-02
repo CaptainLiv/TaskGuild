@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@styling.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskguild.Controller_standard_view">
    <children>
       <VBox prefHeight="1080.0" prefWidth="440.0">
          <children>
@@ -29,8 +29,8 @@
                                  <children>
                                     <Pane fx:id="most_inner_pane" layoutY="7.0" prefHeight="129.0" prefWidth="213.0" styleClass="most_inner_pane" stylesheets="@styling.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-13.0" AnchorPane.topAnchor="7.0">
                                        <children>
-                                          <Label layoutY="45.0" prefHeight="21.0" prefWidth="213.0" text="Level:" />
-                                          <Label layoutY="14.0" prefHeight="21.0" prefWidth="213.0" text="CharacterName" />
+                                          <Label fx:id="avatar_level" layoutY="45.0" prefHeight="21.0" prefWidth="213.0" text="Level:" />
+                                          <Label fx:id="avatar_name" layoutY="14.0" prefHeight="21.0" prefWidth="213.0" text="CharacterName" />
                                           <Label layoutY="69.0" prefHeight="49.0" prefWidth="213.0" text="Spruch" />
                                        </children>
                                     </Pane>
@@ -40,10 +40,13 @@
                         </VBox>
                      </children>
                   </Pane>
-                  <ImageView fitHeight="389.0" fitWidth="401.0" layoutX="42.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="389.0" fitWidth="401.0" layoutX="24.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@default.jpg" />
+                        <Image url="@assets/base/base_model.png" />
                      </image></ImageView>
+                  <ImageView fx:id="view_heads" fitHeight="389.0" fitWidth="401.0" layoutX="24.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="view_tops" fitHeight="389.0" fitWidth="401.0" layoutX="24.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="view_legs" fitHeight="389.0" fitWidth="401.0" layoutX="24.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
                   <Button fx:id="btn_mirror" layoutX="52.0" layoutY="728.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="338.0" styleClass="btn_mirror" stylesheets="@styling.css" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <graphic>
                         <ImageView fitHeight="129.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
@@ -88,19 +91,19 @@
                            </children>
                         </Pane>
                         <Label layoutX="75.0" layoutY="126.0" text="Stärke" />
-                        <ProgressBar layoutX="75.0" layoutY="165.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_strength" layoutX="75.0" layoutY="165.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="226.0" prefHeight="21.0" prefWidth="44.0" text="Glück" />
-                        <ProgressBar layoutX="75.0" layoutY="265.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_luck" layoutX="75.0" layoutY="265.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="326.0" prefHeight="21.0" prefWidth="83.0" text="Schnelligkeit" />
-                        <ProgressBar layoutX="75.0" layoutY="365.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_speed" layoutX="75.0" layoutY="365.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="426.0" prefHeight="21.0" prefWidth="83.0" text="Leben" />
-                        <ProgressBar layoutX="75.0" layoutY="465.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_hp" layoutX="75.0" layoutY="465.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="526.0" prefHeight="21.0" prefWidth="83.0" text="Ausdauer" />
-                        <ProgressBar layoutX="75.0" layoutY="565.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_endurance" layoutX="75.0" layoutY="565.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="626.0" prefHeight="21.0" prefWidth="83.0" text="Intelligenz" />
-                        <ProgressBar layoutX="75.0" layoutY="665.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_intelligence" layoutX="75.0" layoutY="665.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                         <Label layoutX="75.0" layoutY="726.0" prefHeight="21.0" prefWidth="83.0" text="Geist" />
-                        <ProgressBar layoutX="75.0" layoutY="765.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
+                        <ProgressBar fx:id="avatar_wisedom" layoutX="75.0" layoutY="765.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" />
                      </children>
                   </Pane>
                   <Pane fx:id="outer_top_title" layoutX="25.0" layoutY="20.0" prefHeight="80.0" prefWidth="575.0" styleClass="outer_top_title" stylesheets="@styling.css">
