@@ -30,6 +30,7 @@ public class Start_Application extends Application {
                 public void run() {
                     mp.dispose();
                     mp = new MediaPlayer(media);
+                    mp.setVolume(0.05);
                     mp.play();
                     mp.setOnEndOfMedia(this);
                 }
@@ -45,23 +46,31 @@ public class Start_Application extends Application {
 
         //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
          String view = "create-profile-view.fxml";
+         //     Hier Checken ob Todoliste existiert
          if(check_profile()){
-             view = "create-profile-view.fxml";
-        //     Hier Checken ob Todoliste existiert
-        //     view = "standard-view.fxml";
+                view = "standard-view.fxml";
+                // view = "create-profile-view.fxml";
+            
              System.out.println(view);
          }else{
              System.out.println(view);
          }
-         FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
-         Scene scene = new Scene(fxmlLoader.load());
-         stage.setTitle("TaskGuild");
-         stage.setScene(scene);
-         stage.show();
+         change_window(view, stage);
+         
+         
+
         // Avatar avatar = new Avatar("name", 23, 23,"", "", "", new Attribut(1,1,2,3,4,5,6));
         // Avatar.save(avatar);
         // Avatar.load();
         
+    }
+
+    public static void change_window(String view, Stage stage) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
+         Scene scene = new Scene(fxmlLoader.load());
+         stage.setTitle("TaskGuild");
+         stage.setScene(scene);
+         stage.show();
     }
 
     public static boolean check_profile() {

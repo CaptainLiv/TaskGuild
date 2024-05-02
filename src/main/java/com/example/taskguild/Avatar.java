@@ -17,6 +17,10 @@ public class Avatar {
         public int level;
         public static final String filepath_profile = "profile.txt";
 
+
+        public Avatar() {
+                
+        }
         public Avatar(String name, String head, String bottom, String tops){
                 this.name = name;
                 this.xp = 0;
@@ -60,20 +64,20 @@ public class Avatar {
                 }
         }
 
-        public static void load() {
+        public static Avatar load() {
                 
-
+                Avatar avatar = new Avatar();
                 try(BufferedReader br = new BufferedReader(new FileReader(filepath_profile))) {
                         
                         Gson gson = new Gson();
                         String json = br.readLine();
-                        Avatar avatar = gson.fromJson(json, Avatar.class);
-                        System.out.println(avatar.attributes.wisedom);
-                    }
-                    catch (IOException e) {
+                        avatar = gson.fromJson(json, Avatar.class);
+                }
+                catch (IOException e) {
                         e.printStackTrace();
-                    }
-
+                }
+                return avatar;
+                    
         }
 
         public void check_level_up() {
