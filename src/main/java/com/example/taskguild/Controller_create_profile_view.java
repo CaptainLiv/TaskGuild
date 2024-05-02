@@ -1,113 +1,145 @@
 package com.example.taskguild;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-import java.io.*;
+import java.io.File;
 
 public class Controller_create_profile_view {
 
-    public static final String filepath_profile = "profile.txt";
-    public String path_avatar = "src/main/java/com/example/taskguild/pictures/default.jpg";
-
+    @FXML
+    private ImageView view_legs;
 
     @FXML
-    private Button btn_next;
+    private ImageView view_tops;
 
     @FXML
-    private Button btn_av1;
+    private ImageView view_heads;
 
     @FXML
-    private Button btn_av2;
+    private TextField txt_avatar_name;
 
     @FXML
-    private Button btn_av3;
+    private Button head_bald_model;
 
     @FXML
-    private Button btn_av4;
+    private Button head_beanie_model;
 
     @FXML
-    private Button btn_av5;
+    private Button head_french_model;
 
     @FXML
-    private Button btn_av6;
+    private Button head_halo_model;
 
     @FXML
-    private Button btn_av7;
+    private Button head_pigtails_model;
 
     @FXML
-    private ImageView view_avatar;
-
-
-    @FXML
-    private TextField txt_name;
+    private Button head_sunglasses_model;
 
     @FXML
-    void avatar_confirm(MouseEvent event){
-        System.out.println(view_avatar.getImage().getUrl());
+    private Button head_top_model;
 
-        // sichern des Avatars
-        if(!txt_name.getText().isEmpty() && !view_avatar.getImage().getUrl().equals("src/main/java/com/example/taskguild/pictures/default.jpg")){ //bedingung definieren vor dem Speichern
-            // Avatar neuer_avatar = new Avatar(txt_name.getText(),view_avatar.getImage().getUrl());
-            // Avatar.save(neuer_avatar);
-            System.out.println("TEST");
+    @FXML
+    private Button head_clear;
 
-            }else{
-            System.out.println(1);
+    @FXML
+    private Button legs_carmo_model;
+
+    @FXML
+    private Button legs_galaxy_model;
+
+    @FXML
+    private Button legs_jeans_model;
+
+    @FXML
+    private Button legs_joggers_model;
+
+    @FXML
+    private Button legs_jorts_model;
+
+    @FXML
+    private Button legs_socks_model;
+
+    @FXML
+    private Button legs_tutu_model;
+
+    @FXML
+    private Button leg_clear;
+
+    @FXML
+    private Button top_crop_model;
+
+    @FXML
+    private Button top_hemd_model;
+
+    @FXML
+    private Button top_hoodie_model;
+
+    @FXML
+    private Button top_jacket_model;
+
+    @FXML
+    private Button top_naked_model;
+
+    @FXML
+    private Button top_tats_model;
+
+    @FXML
+    private Button top_vest_model;
+
+    @FXML
+    private Button lop_clear;
+
+    @FXML
+    private Button confirm;
+
+    @FXML
+    void avatar_confirm(MouseEvent event) {
+        if (txt_avatar_name.getText().length() <= 3){
+            confirm.setDisable(true);
         }
-
+        Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
+        Avatar.save(avatar);
     }
 
     @FXML
-    void avatar_select(MouseEvent event) {
-        //auswahl eines Avatar anhand der Button id
-        String id = ((Node) event.getSource()).getId();
-        switch(id) {
-            case "btn_av1":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a1.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av2":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a2.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av3":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a3.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av4":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a4.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av5":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a5.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av6":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a6.jpg";
-                System.out.println(id);
-                break;
-            case "btn_av7":
-                // code block
-                path_avatar ="src/main/java/com/example/taskguild/pictures/a7.jpg";
-                System.out.println(id);
-                break;
-            default:
-                // code block
+    void button_activate() {
+        if (txt_avatar_name.getText().length() > 3) {
+            confirm.setDisable(false);
         }
-        File file = new File(path_avatar);;
+        else {
+            confirm.setDisable(true);
+        }
+        
+    }
+    
+    @FXML
+    void change_head(MouseEvent event) {
+        String source_head = event.getPickResult().getIntersectedNode().getId();
+        File file = new File("src/main/resources/com/example/taskguild/assets/heads/"+source_head+".png");
         Image image = new Image(file.toURI().toString());
-        view_avatar.setImage(image);
+        view_heads.setImage(image);
     }
+
+    @FXML
+    void change_top(MouseEvent event) {
+        String source_top = event.getPickResult().getIntersectedNode().getId();
+        File file = new File("src/main/resources/com/example/taskguild/assets/tops/"+source_top+".png");
+        Image image = new Image(file.toURI().toString());
+        view_tops.setImage(image);
+    }
+
+    @FXML
+    void change_leg(MouseEvent event) {
+        String source_leg = event.getPickResult().getIntersectedNode().getId();
+        File file = new File("src/main/resources/com/example/taskguild/assets/legs/"+source_leg+".png");
+        Image image = new Image(file.toURI().toString());
+        view_legs.setImage(image);
+    }
+
 }
