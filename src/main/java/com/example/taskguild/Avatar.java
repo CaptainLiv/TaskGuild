@@ -17,7 +17,7 @@ public class Avatar {
         public int level;
         public static final String filepath_profile = "profile.txt";
 
-        public Avatar(String name, String head, String bottom, String tops, Attribut attributes){
+        public Avatar(String name, String head, String bottom, String tops){
                 this.name = name;
                 this.xp = 0;
                 this.level = 0;
@@ -25,13 +25,7 @@ public class Avatar {
                 this.head = head;
                 this.bottom = bottom;
                 this.tops = tops;
-                this.attributes.endurance = 0;
-                this.attributes.hp = 0;
-                this.attributes.intelligence = 0;
-                this.attributes.luck = 0;
-                this.attributes.speed = 0;
-                this.attributes.strength = 0;
-                this.attributes.wisedom = 0;
+                this.attributes = new Attribut(0,0,0,0,0,0,0);
         }
         public Avatar(String name, int xp, int level, String head, String bottom, String tops, Attribut attributes){
                 this.name = name;

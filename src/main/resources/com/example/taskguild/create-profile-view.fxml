@@ -69,7 +69,7 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txt_avatar_name" prefHeight="52.0" prefWidth="456.0">
+                        <TextField fx:id="txt_avatar_name" onKeyReleased="#button_activate" prefHeight="52.0" prefWidth="456.0">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -81,7 +81,7 @@
                   </VBox>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
-                        <Button alignment="CENTER" layoutX="61.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#avatar_confirm" prefHeight="85.0" prefWidth="61.0" text="Done" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
+                        <Button fx:id="confirm" alignment="CENTER" disable="true" layoutX="61.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#avatar_confirm" prefHeight="85.0" prefWidth="61.0" text="Done" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="10.0">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -477,21 +477,9 @@
                   <Image url="@assets/base/base_model.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="view_legs" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/legs/legs_carmo_model.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="view_heads" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/heads/head_french_model.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="view_tops" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/tops/top_tats_model.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="view_legs" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="view_heads" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="view_tops" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </center>
