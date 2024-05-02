@@ -6,8 +6,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
+
 
 public class Controller_create_profile_view {
 
@@ -93,18 +98,20 @@ public class Controller_create_profile_view {
     private Button top_vest_model;
 
     @FXML
-    private Button lop_clear;
+    private Button top_clear;
 
     @FXML
     private Button confirm;
 
     @FXML
-    void avatar_confirm(MouseEvent event) {
+    void avatar_confirm(MouseEvent event) throws IOException {
         if (txt_avatar_name.getText().length() <= 3){
             confirm.setDisable(true);
         }
         Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         Avatar.save(avatar);
+        Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
+        Start_Application.change_window("standard-view.fxml", stage);
     }
 
     @FXML
@@ -124,6 +131,7 @@ public class Controller_create_profile_view {
         File file = new File("src/main/resources/com/example/taskguild/assets/heads/"+source_head+".png");
         Image image = new Image(file.toURI().toString());
         view_heads.setImage(image);
+        change_sound();
     }
 
     @FXML
@@ -132,6 +140,7 @@ public class Controller_create_profile_view {
         File file = new File("src/main/resources/com/example/taskguild/assets/tops/"+source_top+".png");
         Image image = new Image(file.toURI().toString());
         view_tops.setImage(image);
+        change_sound();
     }
 
     @FXML
@@ -140,6 +149,15 @@ public class Controller_create_profile_view {
         File file = new File("src/main/resources/com/example/taskguild/assets/legs/"+source_leg+".png");
         Image image = new Image(file.toURI().toString());
         view_legs.setImage(image);
+        change_sound();
+        
+    }
+    void change_sound() {
+        File mediafile = new File("src/main/resources/com/example/taskguild/musik/Avatar_umziehen_sound.mp3");
+        Media media = new Media(mediafile.toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setVolume(0.1);
+        mediaPlayer.play();
     }
 
 }

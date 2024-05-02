@@ -477,9 +477,18 @@
                   <Image url="@assets/base/base_model.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="view_legs" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="view_heads" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="view_tops" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="view_legs" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/legs/leg_clear.png" />
+               </image></ImageView>
+            <ImageView fx:id="view_heads" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/heads/head_clear.png" />
+               </image></ImageView>
+            <ImageView fx:id="view_tops" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/tops/top_clear.png" />
+               </image></ImageView>
          </children>
       </AnchorPane>
    </center>

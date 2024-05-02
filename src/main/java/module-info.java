@@ -6,6 +6,7 @@ module com.example.guildtask {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.google.gson;
+    requires javafx.graphics;
     
     opens com.example.taskguild to com.google.gson, javafx.fxml;
     exports com.example.taskguild;
