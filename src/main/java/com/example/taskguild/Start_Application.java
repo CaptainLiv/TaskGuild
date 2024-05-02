@@ -6,7 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
@@ -17,7 +18,13 @@ public class Start_Application extends Application {
     // Start methode des Fensters
     @Override
     public void start(Stage stage) throws IOException {
-       //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
+        File file = new File("src/main/resources/com/example/taskguild/musik/Avatar_umziehenErstellen_Hintergrundmusik.mp3");
+        Media media = new Media(file.toURI().toString());
+        //Instantiating MediaPlayer class
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        //by setting this property to true, the audio will be played
+        mediaPlayer.setAutoPlay(true);
+        //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
          String view = "create-profile-view.fxml";
          if(check_profile()){
              view = "create-profile-view.fxml";
