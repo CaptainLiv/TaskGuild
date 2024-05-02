@@ -111,8 +111,11 @@ public class Controller_create_profile_view {
         Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         Avatar.save(avatar);
         Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
-        Start_Application.change_window("standard-view.fxml", stage);
-    }
+        Start_Application.change_window("mainframe.fxml", stage);
+        Start_Application.mp.dispose();
+        Start_Application.play_music("Hintergrundmusik(ToDo_Liste)");
+
+}
 
     @FXML
     void button_activate() {
