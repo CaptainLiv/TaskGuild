@@ -95,12 +95,29 @@ public class Controller_create_profile_view {
     @FXML
     private Button lop_clear;
 
+    @FXML
+    private Button confirm;
 
     @FXML
     void avatar_confirm(MouseEvent event) {
-
+        if (txt_avatar_name.getText().length() <= 3){
+            confirm.setDisable(true);
+        }
+        Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
+        Avatar.save(avatar);
     }
 
+    @FXML
+    void button_activate() {
+        if (txt_avatar_name.getText().length() > 3) {
+            confirm.setDisable(false);
+        }
+        else {
+            confirm.setDisable(true);
+        }
+        
+    }
+    
     @FXML
     void change_head(MouseEvent event) {
         String source_head = event.getPickResult().getIntersectedNode().getId();
