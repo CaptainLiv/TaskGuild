@@ -1,7 +1,6 @@
 module com.example.guildtask {
     requires javafx.controls;
     requires javafx.fxml;
-    // opens java.time to com.google.gson;
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
