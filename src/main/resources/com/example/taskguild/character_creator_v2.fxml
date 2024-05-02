@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
@@ -53,7 +54,7 @@
    <left>
       <AnchorPane prefHeight="810.0" prefWidth="464.0" BorderPane.alignment="TOP_LEFT">
          <children>
-            <TabPane layoutY="-1.6" prefHeight="878.0" prefWidth="683.0" stylesheets="@../Style.css" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TabPane layoutY="-1.6" prefHeight="878.0" prefWidth="683.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
                 <Tab text="HEAD">
                   <content>
@@ -86,7 +87,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_bald_model.png" />
+                                                      <Image url="@assets/heads/head_bald_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -99,7 +100,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_beanie_model.png" />
+                                                      <Image url="@assets/heads/head_beanie_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -112,7 +113,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_french_model.png" />
+                                                      <Image url="@assets/heads/head_french_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -125,7 +126,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_halo_model.png" />
+                                                      <Image url="@assets/heads/head_halo_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -138,7 +139,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_pigtails_model.png" />
+                                                      <Image url="@assets/heads/head_pigtails_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -151,7 +152,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_sunglasses_model.png" />
+                                                      <Image url="@assets/heads/head_sunglasses_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -164,7 +165,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/heads/head_top_model.png" />
+                                                      <Image url="@assets/heads/head_top_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -208,7 +209,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_carmo_model.png" />
+                                                      <Image url="@assets/legs/legs_carmo_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -221,7 +222,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_galaxy_model.png" />
+                                                      <Image url="@assets/legs/legs_galaxy_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -234,7 +235,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_jeans_model.png" />
+                                                      <Image url="@assets/legs/legs_jeans_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -247,7 +248,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_joggers_model.png" />
+                                                      <Image url="@assets/legs/legs_joggers_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -260,7 +261,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_jorts_model.png" />
+                                                      <Image url="@assets/legs/legs_jorts_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -273,7 +274,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_socks_model.png" />
+                                                      <Image url="@assets/legs/legs_socks_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -286,7 +287,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/legs/legs_tutu_model.png" />
+                                                      <Image url="@assets/legs/legs_tutu_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -330,7 +331,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="219.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_crop_model.png" />
+                                                      <Image url="@assets/tops/top_crop_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -343,7 +344,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_hemd_model.png" />
+                                                      <Image url="@assets/tops/top_hemd_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -356,7 +357,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_hoodie_model.png" />
+                                                      <Image url="@assets/tops/top_hoodie_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -369,7 +370,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_jacket_model.png" />
+                                                      <Image url="@assets/tops/top_jacket_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -382,7 +383,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_naked_model.png" />
+                                                      <Image url="@assets/tops/top_naked_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -395,7 +396,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_tats_model.png" />
+                                                      <Image url="@assets/tops/top_tats_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -408,7 +409,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../assets/tops/top_vest_model.png" />
+                                                      <Image url="@assets/tops/top_vest_model.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -422,6 +423,11 @@
                     </content>
                   </Tab>
               </tabs>
+               <stylesheets>
+                  <URL value="@../../../../../Style.css" />
+                  <URL value="@Style.css" />
+                  <URL value="@Style.css" />
+               </stylesheets>
             </TabPane>
          </children>
       </AnchorPane>
@@ -433,7 +439,7 @@
                <children>
                   <ImageView pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
-                        <Image url="@../assets/bg/character_creator.png" />
+                        <Image url="@assets/bg/character_creator.png" />
                      </image>
                      <viewport>
                         <Rectangle2D height="640.0" />
@@ -441,22 +447,22 @@
                   </ImageView>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/base/base_model.png" />
+                        <Image url="@assets/base/base_model.png" />
                      </image>
                   </ImageView>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/legs/legs_carmo_model.png" />
+                        <Image url="@assets/legs/legs_carmo_model.png" />
                      </image>
                   </ImageView>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/heads/head_french_model.png" />
+                        <Image url="@assets/heads/head_french_model.png" />
                      </image>
                   </ImageView>
                   <ImageView pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
-                        <Image url="@../assets/tops/top_tats_model.png" />
+                        <Image url="@assets/tops/top_tats_model.png" />
                      </image>
                   </ImageView>
                </children>
