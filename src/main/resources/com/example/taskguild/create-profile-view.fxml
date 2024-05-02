@@ -48,8 +48,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-
 <BorderPane prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskguild.Controller_create_profile_view">
    <top>
       <AnchorPane prefHeight="121.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
@@ -118,7 +116,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_clear" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                                              </graphic>
@@ -127,7 +125,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_bald_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -140,7 +138,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_beanie_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -153,7 +151,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_french_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -166,7 +164,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="760.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_halo_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -179,7 +177,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_pigtails_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -192,7 +190,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_sunglasses_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -205,7 +203,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="head_top_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_head" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -222,7 +220,7 @@
                         </AnchorPane>
                      </content>
                   </Tab>
-                  <Tab text="bottoms">
+                  <Tab text="Legs">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
@@ -240,7 +238,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="leg_clear" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                                              </graphic>
@@ -249,7 +247,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_carmo_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -262,7 +260,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_galaxy_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -275,7 +273,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_jeans_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -288,7 +286,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="760.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_joggers_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -301,7 +299,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_jorts_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -314,7 +312,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_socks_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -327,7 +325,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="legs_tutu_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_leg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -362,7 +360,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="lop_clear" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                                              </graphic>
@@ -371,7 +369,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_crop_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -384,7 +382,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_hemd_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -397,7 +395,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_hoodie_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -410,7 +408,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="760.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_jacket_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -423,7 +421,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="10.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_naked_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -436,7 +434,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="260.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_tats_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -449,7 +447,7 @@
                                     </AnchorPane>
                                     <AnchorPane layoutX="510.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <children>
-                                          <Button layoutX="121.0" layoutY="107.0" mnemonicParsing="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <Button fx:id="top_vest_model" layoutX="121.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#change_top" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <graphic>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
