@@ -8,7 +8,7 @@ public class Todo {
         Simple,
         Bossfight,
     } 
-
+    public int ID;
     public String name;
     public String description;
     public String startDate;

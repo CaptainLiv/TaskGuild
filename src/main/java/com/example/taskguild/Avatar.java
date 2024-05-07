@@ -15,6 +15,7 @@ public class Avatar {
         public int xp;
         public int xp_needed;
         public int level;
+        public int skill_orbs;
         public static final String filepath_profile = "profile.txt";
 
 
@@ -24,8 +25,8 @@ public class Avatar {
         public Avatar(String name, String head, String bottom, String tops){
                 this.name = name;
                 this.xp = 0;
-                this.level = 0;
-                this.xp_needed = 5;
+                this.level = 1;
+                this.xp_needed = 100;
                 this.head = head;
                 this.bottom = bottom;
                 this.tops = tops;
@@ -57,7 +58,6 @@ public class Avatar {
                         FileWriter myWriter = new FileWriter(filepath_profile);
                         myWriter.write(json);
                         myWriter.close();
-                        System.out.println("Successfully wrote to the file.");
                 } catch (IOException e) {
                         System.out.println("An error occurred.");
                         e.printStackTrace();
@@ -90,8 +90,12 @@ public class Avatar {
                                 xp = 0;
                         }
                         level = level + 1;
-                        double x = xp_needed + xp_needed * 0.1;
+                        double x = xp_needed + xp_needed * 0.25;
                         xp_needed = (int)x;
+                        skill_orbs = skill_orbs + 1;
+                        if (level % 5 == 0) {
+                                skill_orbs = skill_orbs + 2;
+                        }
                 }
         }
 
