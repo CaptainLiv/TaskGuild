@@ -15,6 +15,7 @@ import java.io.File;
 public class Start_Application extends Application {
     //String File name als auch Pfad
     public static final String filepath_profile = "profile.txt";
+    public static boolean does_profile_exists;
 
     @SuppressWarnings("exports")
     public static MediaPlayer mp;
@@ -58,7 +59,7 @@ public class Start_Application extends Application {
     public static boolean check_profile() {
         // Prüfung der Profile Datei, Rückgabe Boolean Wert
         File profilefile = new File(filepath_profile);
-        boolean does_profile_exists = true;
+        does_profile_exists = true;
         if (!profilefile.isFile()) {
             try{
                if(profilefile.createNewFile()){
@@ -67,6 +68,11 @@ public class Start_Application extends Application {
             }catch (IOException e){
                 e.printStackTrace();
                 System.out.println("aisjd");
+            }
+        }
+        else {
+            if (profilefile.length() == 0) {
+                does_profile_exists = false;
             }
         }
         return does_profile_exists;

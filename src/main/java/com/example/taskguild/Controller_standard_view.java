@@ -1,5 +1,6 @@
 package com.example.taskguild;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -55,10 +57,14 @@ public class Controller_standard_view implements Initializable {
     @FXML
     private ProgressBar avatar_wisedom;
 
+    @FXML 
+    private Button mirror_button;
+
+    @FXML
+    private ListView<Todo> todolist;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
         view_heads.setImage(new Image(avatar.head));
         view_legs.setImage(new Image(avatar.bottom));
         view_tops.setImage(new Image(avatar.tops));
@@ -72,6 +78,14 @@ public class Controller_standard_view implements Initializable {
         avatar_endurance.setProgress((double)avatar.attributes.endurance / 100);
         avatar_intelligence.setProgress((double)avatar.attributes.intelligence / 100);
         avatar_wisedom.setProgress((double)avatar.attributes.wisedom / 100);
+        todolist.getItems().add(new Todo("Test", "", "",Todo.Type.Bossfight, 3, 3));
+    }
+
+    public void switch_window() throws IOException {
+        Stage stage = (Stage) avatar_name.getScene().getWindow();
+        Start_Application.change_window("character_creator_v2.fxml", stage);
+        Start_Application.mp.dispose();
+        Start_Application.play_music("Avatar_umziehenErstellen_Hintergrundmusik");
     }
 
     
