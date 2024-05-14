@@ -115,6 +115,9 @@ public class Controller_create_profile_view implements Initializable{
             view_tops.setImage(new Image(avatar.tops));
             txt_avatar_name.setText(avatar.name);
         }
+        if (txt_avatar_name.getText().length() > 3) {
+            confirm.setDisable(false);
+        }
     }
     @FXML
     void avatar_confirm(MouseEvent event) throws IOException {
@@ -124,7 +127,7 @@ public class Controller_create_profile_view implements Initializable{
         Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         Avatar.save(avatar);
         Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
-        Start_Application.change_window("mainframe.fxml", stage);
+        Start_Application.change_window("mainframe_v3.fxml", stage);
         Start_Application.mp.dispose();
         Start_Application.play_music("Hintergrundmusik(ToDo_Liste)");
         Start_Application.does_profile_exists = true;

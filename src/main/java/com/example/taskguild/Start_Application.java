@@ -26,10 +26,11 @@ public class Start_Application extends Application {
 
 
         //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
-         String view = "character_creator_v2.fxml";
+         String view = "character_creator_v3.fxml";
          //     Hier Checken ob Todoliste existiert
          if(check_profile()){
-                view = "mainframe.fxml";
+             //view = "mainframe.fxml";
+                view = "mainframe_v3.fxml";
                 // view = "create-profile-view.fxml";
                 mp.dispose();
                 play_music("Hintergrundmusik(ToDo_Liste)");
