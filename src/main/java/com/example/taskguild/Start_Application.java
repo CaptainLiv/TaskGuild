@@ -53,6 +53,8 @@ public class Start_Application extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
          Scene scene = new Scene(fxmlLoader.load());
          stage.setTitle("TaskGuild");
+         stage.setX(1);
+         stage.setY(1);
          stage.setScene(scene);
          stage.show();
     }
