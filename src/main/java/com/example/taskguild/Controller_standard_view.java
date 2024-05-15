@@ -84,6 +84,9 @@ public class Controller_standard_view implements Initializable {
     public void switch_window() throws IOException {
         Stage stage = (Stage) avatar_name.getScene().getWindow();
         Start_Application.change_window("character_creator_v3.fxml", stage);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        stage.setFullScreenExitHint("");
         Start_Application.mp.dispose();
         Start_Application.play_music("Avatar_umziehenErstellen_Hintergrundmusik");
     }

@@ -3,12 +3,12 @@ package com.example.taskguild;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 
 import java.io.File;
 
@@ -50,11 +50,14 @@ public class Start_Application extends Application {
     }
 
     public static void change_window(String view, Stage stage) throws IOException{
+
         FXMLLoader fxmlLoader = new FXMLLoader(Start_Application.class.getResource(view));
          Scene scene = new Scene(fxmlLoader.load());
          stage.setTitle("TaskGuild");
-         stage.setX(1);
-         stage.setY(1);
+         stage.setFullScreen(true);
+         stage.setResizable(false);
+         stage.setFullScreenExitHint("");
+         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
          stage.setScene(scene);
          stage.show();
     }
