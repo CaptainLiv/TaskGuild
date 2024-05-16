@@ -49,7 +49,7 @@
                               <Font name="Bodoni MT Black" size="22.0" />
                            </font>
                         </Label>
-                        <ProgressBar prefHeight="14.0" prefWidth="339.0" progress="0.0" />
+                        <ProgressBar prefHeight="14.0" prefWidth="339.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Label fx:id="avatar_level1" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="59.0" text="{x+1}" textFill="WHITE">
                            <font>
                               <Font name="Bodoni MT Black" size="22.0" />
@@ -192,7 +192,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task1" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -211,7 +211,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength1" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength1" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task11" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -230,7 +230,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength11" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength11" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task111" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -249,7 +249,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength12" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength12" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task112" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -268,7 +268,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength121" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength121" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task1121" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -287,7 +287,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength1211" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength1211" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119; -fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task11211" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -306,7 +306,7 @@
                               <Font name="Bodoni MT Black" size="32.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="avatar_strength12111" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119;" />
+                        <ProgressBar fx:id="avatar_strength12111" layoutX="67.0" layoutY="64.0" prefHeight="28.0" prefWidth="500.0" progress="0.0" style="-fx-region-background: #5c2119; -fx-accent: #4f6652;" />
                         <Button fx:id="btn_new_task112111" layoutX="11.0" layoutY="55.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: #4f6652; -fx-border-color: #4f6652;" stylesheets="@styling.css">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
