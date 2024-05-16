@@ -134,6 +134,7 @@ public class Controller_create_profile_view implements Initializable{
         stage.setFullScreen(true);
         stage.setResizable(false);
         stage.setFullScreenExitHint("");
+        stage.setAlwaysOnTop(true);
         Start_Application.mp.dispose();
         Start_Application.play_music("Hintergrundmusik(ToDo_Liste)");
         Start_Application.does_profile_exists = true;

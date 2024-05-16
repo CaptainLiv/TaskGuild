@@ -87,6 +87,7 @@ public class Controller_standard_view implements Initializable {
         stage.setFullScreen(true);
         stage.setResizable(false);
         stage.setFullScreenExitHint("");
+        stage.setAlwaysOnTop(true);
         Start_Application.mp.dispose();
         Start_Application.play_music("Avatar_umziehenErstellen_Hintergrundmusik");
     }
