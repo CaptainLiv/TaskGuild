@@ -6,14 +6,11 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -35,6 +32,15 @@ public class Controller_standard_view implements Initializable {
 
     @FXML
     private Label avatar_level;
+
+    @FXML
+    private Label avatar_next_level;
+
+    @FXML
+    private Label orbsvalue;
+
+    @FXML
+    private ProgressBar avatar_xp;
 
     @FXML
     private ProgressBar avatar_strength;
@@ -61,7 +67,10 @@ public class Controller_standard_view implements Initializable {
     private Button mirror_button;
 
     @FXML
-    private ListView<Todo> todolist;
+    private Pane task_space;
+
+    @FXML
+    private ScrollPane tasklist;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -71,6 +80,8 @@ public class Controller_standard_view implements Initializable {
         avatar_name.setText(avatar.name);
         String level =  avatar.level + "";
         avatar_level.setText(level);
+        String nextlevel =  avatar.level+1 + "";
+        avatar_next_level.setText(nextlevel);
         avatar_strength.setProgress((double)avatar.attributes.strength / 100);
         avatar_luck.setProgress((double)avatar.attributes.luck / 100);
         avatar_speed.setProgress((double)avatar.attributes.speed / 100);
@@ -78,7 +89,7 @@ public class Controller_standard_view implements Initializable {
         avatar_endurance.setProgress((double)avatar.attributes.endurance / 100);
         avatar_intelligence.setProgress((double)avatar.attributes.intelligence / 100);
         avatar_wisedom.setProgress((double)avatar.attributes.wisedom / 100);
-        todolist.getItems().add(new Todo("Test", "", "",Todo.Type.Bossfight, 3, 3));
+
     }
 
     public void switch_window() throws IOException {
