@@ -15,6 +15,8 @@ import java.io.File;
 public class Start_Application extends Application {
     //String File name als auch Pfad
     public static final String filepath_profile = "profile.txt";
+    public static final String filepath_todolist = "todolist.txt";
+    public static final String filepath_activitylist = "activitylist.txt";
     public static boolean does_profile_exists;
 
     @SuppressWarnings("exports")
@@ -65,11 +67,15 @@ public class Start_Application extends Application {
     public static boolean check_profile() {
         // Prüfung der Profile Datei, Rückgabe Boolean Wert
         File profilefile = new File(filepath_profile);
+        File todoFile = new File(filepath_todolist);
+        File activityFile = new File(filepath_activitylist);
         does_profile_exists = true;
         if (!profilefile.isFile()) {
             try{
                if(profilefile.createNewFile()){
-                  does_profile_exists = false;
+                    does_profile_exists = false;
+                    activityFile.createNewFile();
+                    todoFile.createNewFile();
                }
             }catch (IOException e){
                 e.printStackTrace();

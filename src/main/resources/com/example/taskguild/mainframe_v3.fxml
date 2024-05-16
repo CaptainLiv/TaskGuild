@@ -368,7 +368,7 @@
                               <Font name="Bodoni MT Black" size="70.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btn_new_task" mnemonicParsing="false" styleClass="btn_new_task" stylesheets="@styling.css">
+                        <Button mnemonicParsing="false" onMouseClicked="#switch_window_newtask" styleClass="btn_new_task" stylesheets="@styling.css">
                            <graphic>
                               <ImageView pickOnBounds="true" preserveRatio="true">
                                  <image>
