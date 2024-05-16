@@ -9,13 +9,7 @@
     -fx-background-radius: 20px;
     -fx-border-style: solid;
 }
-.middle_ankerpane{
-    -fx-background-color:#8aa48a;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
-}
+
 .outer_ankerpane{
     -fx-background-color:#ac4a31;
     -fx-border-width: 2px 2px 2px 2px;
