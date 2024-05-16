@@ -4,18 +4,12 @@
 
 .side_ankerpane{
     -fx-background-color:#ac4a31;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
+
 }
 
 .outer_ankerpane{
     -fx-background-color:#ac4a31;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
+
 }
 .middle_top_title{
     -fx-background-color:#4f6652;
@@ -41,19 +35,18 @@
     
 }
 .task_space{
-    -fx-background-color:#4f6652;
-    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-color:#f6f9e8;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
-    -fx-border-style: solid;
+
 }
 .inner_pane{
-    -fx-background-color:#5c2119;
+    -fx-background-color:#bf9891;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-border-style: solid;
-    -fx-border-color:#5c2119;
+    -fx-border-color:#bf9891;
     
 }
 .most_inner_pane{
@@ -73,8 +66,8 @@
     -fx-border-color: #bf9891;
 }
 .btn_new_task{
-    -fx-background-color:#d4f1e0;
-    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-color:#4f6652
+    ;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-border-style: solid;
