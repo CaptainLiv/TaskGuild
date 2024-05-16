@@ -5,29 +5,31 @@ import java.util.Date;
 public class Todo {
     
     public enum Type {
-        Simple,
-        Bossfight,
+        Normal,
+        Daily,
+        Time
     } 
     public int ID;
     public String name;
+    public String activity_name;
     public String description;
     public String startDate;
     public String endDate;
     public boolean is_done;
     public Type type;
     public int difficulty;
-    public int hp_boss;
+    public String[] Day;
 
-    public Todo(String name, String description, String endDate, Type type, int difficulty, int hp_boss) {
+
+    public Todo(String name, String activity_name, String description, Type type, int difficulty) {
         
         this.startDate = LocalDateTime.now().toString();
+        this.activity_name = activity_name;
         this.name = name;
         this.description = description;
-        this.endDate = endDate;
         this.is_done = false;
         this.type = type;
         this.difficulty = difficulty;
-        this.hp_boss = hp_boss;
         
     }
 

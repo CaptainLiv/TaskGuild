@@ -33,17 +33,23 @@ public class Todoliste {
                 }
     }
 
-    public static void load() {
-        try(BufferedReader br = new BufferedReader(new FileReader(filepath_todolist))) {
-                        
-            Gson gson = new Gson();
-            String json = br.readLine();
-            Todoliste todolist = gson.fromJson(json, Todoliste.class);
-            System.out.println(todolist.todolist.get(1).name);
+    public static Todoliste load() {
+        Todoliste todolist = new Todoliste();
+        if (!filepath_todolist.isEmpty()) {
+
+            try(BufferedReader br = new BufferedReader(new FileReader(filepath_todolist))) {
+                            
+                Gson gson = new Gson();
+                String json = br.readLine();
+                todolist = gson.fromJson(json, Todoliste.class);
+                System.out.println(todolist.todolist.get(1).name);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return todolist;
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        else return null;
     }
 
 
