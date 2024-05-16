@@ -35,22 +35,22 @@ public class Todoliste {
 
     public static Todoliste load() {
         Todoliste todolist = new Todoliste();
-        if (!filepath_todolist.isEmpty()) {
-
             try(BufferedReader br = new BufferedReader(new FileReader(filepath_todolist))) {
                             
                 Gson gson = new Gson();
                 String json = br.readLine();
+                if (json == null) {
+                    return null;
+                }
                 todolist = gson.fromJson(json, Todoliste.class);
-                System.out.println(todolist.todolist.get(1).name);
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
             return todolist;
         }
-        else return null;
-    }
+        
+    
 
 
     // for(Todo i : todolist.todolist) {

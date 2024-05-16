@@ -1,5 +1,6 @@
 package com.example.taskguild;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class Controller_new_task_view implements Initializable {
     @FXML 
@@ -24,14 +26,17 @@ public class Controller_new_task_view implements Initializable {
     private RadioButton difficulty_middleeasy;
 
     @FXML
-    private TextField hours, minutes;
+    private TextField  minutes, hours;
 
     @FXML
-    private CheckBox monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+    private CheckBox sunday, saturday, friday, thursday, wednesday, tuesday, monday;
 
 
     @FXML
-    private TextField activity_title, task_title;
+    private TextField activity_title;
+
+    @FXML
+    private TextField task_title;
 
     @FXML 
     private TextArea task_description;
@@ -48,9 +53,9 @@ public class Controller_new_task_view implements Initializable {
     @FXML
     private ChoiceBox select_activity;
 
-    public ActivityList activitylist;
+    public ActivityList activitylist = new ActivityList();
 
-    public Todoliste todolist;
+    public Todoliste todolist = new Todoliste();
      
  
 
@@ -142,7 +147,7 @@ public class Controller_new_task_view implements Initializable {
         activity_title.clear();
     }
 
-    public void create_new_task() {
+    public void create_new_task() throws IOException {
         Todo new_todo;
         Activity selected_activity = new Activity("", 0);
             for (Activity activity : activitylist.activitylist) {
@@ -189,5 +194,11 @@ public class Controller_new_task_view implements Initializable {
         }
         todolist.add_item(new_todo);
         Todoliste.save(todolist);
+        Stage stage = (Stage) task_title.getScene().getWindow();
+        Start_Application.change_window("mainframe_v3.fxml", stage);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        stage.setFullScreenExitHint("");
+        stage.setAlwaysOnTop(true);
     }
 }
