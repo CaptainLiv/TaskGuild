@@ -98,7 +98,7 @@
                                        </font>
                                     </Label>
 
-                                    <TextField layoutY="54.0" prefHeight="25.0" prefWidth="226.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                    <TextField fx:id="task_title" layoutY="54.0" prefHeight="25.0" prefWidth="226.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                        <font>
                                           <Font name="Arial" size="12.0" />
                                        </font></TextField>
@@ -154,7 +154,7 @@
                                        </font>
                                     </Label>
             
-                                                <TextField layoutX="125.0" layoutY="53.0" prefHeight="25.0" prefWidth="347.0" />
+                                                <TextField fx:id="activity_title" layoutX="125.0" layoutY="53.0" prefHeight="25.0" prefWidth="347.0" />
                                  </children>
                               </Pane>
                               <GridPane prefHeight="131.0" prefWidth="278.0">
@@ -201,7 +201,7 @@
                               <Pane prefHeight="131.0" prefWidth="344.0">
                                  <children>
             
-                                                <Button layoutX="137.0" layoutY="52.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4f6652;" text="Done" textFill="WHITE">
+                                                <Button layoutX="137.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#create_new_activity" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: #4f6652;" text="Done" textFill="WHITE">
                                        <font>
                                           <Font name="Arial Black" size="12.0" />
                                        </font></Button>
@@ -299,37 +299,37 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <CheckBox mnemonicParsing="false" text="Monday">
+                                    <CheckBox fx:id="monday" mnemonicParsing="false" text="Monday">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Tuesday" GridPane.columnIndex="1">
+                                    <CheckBox fx:id="tuesday" mnemonicParsing="false" text="Tuesday" GridPane.columnIndex="1">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Wednesday" GridPane.rowIndex="1">
+                                    <CheckBox fx:id="wednesday" mnemonicParsing="false" text="Wednesday" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Thursday" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <CheckBox fx:id="thursday" mnemonicParsing="false" text="Thursday" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Friday" GridPane.rowIndex="2">
+                                    <CheckBox fx:id="friday" mnemonicParsing="false" text="Friday" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Saturday" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <CheckBox fx:id="saturday" mnemonicParsing="false" text="Saturday" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
                                     </CheckBox>
-                                    <CheckBox mnemonicParsing="false" text="Sunday" GridPane.rowIndex="3">
+                                    <CheckBox fx:id="sunday" mnemonicParsing="false" text="Sunday" GridPane.rowIndex="3">
                                        <font>
                                           <Font name="Arial Nova" size="12.0" />
                                        </font>
@@ -369,7 +369,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="146.0" prefWidth="1714.0" style="-fx-background-color: #fae6c3; -fx-border-width: 0 20px 20px 20px;" styleClass="newTaskArea" stylesheets="@Style.css">
          <children>
-            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="251.0" style="-fx-background-color: #4f6652;" text="Done" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="30.0">
+            <Button mnemonicParsing="false" onMouseClicked="#create_new_task" prefHeight="75.0" prefWidth="251.0" style="-fx-background-color: #4f6652;" text="Done" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font name="Bodoni MT Black" size="38.0" />
                </font>
