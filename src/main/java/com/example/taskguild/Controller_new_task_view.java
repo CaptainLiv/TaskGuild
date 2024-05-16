@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -42,7 +43,10 @@ public class Controller_new_task_view implements Initializable {
     private TextArea task_description;
 
     @FXML
-    private AnchorPane create_new_activity;
+    private HBox create_new_activity;
+
+    @FXML
+    private Label new_activity_label;
 
     @FXML
     private VBox select_time;
@@ -52,6 +56,9 @@ public class Controller_new_task_view implements Initializable {
 
     @FXML
     private ChoiceBox select_activity;
+
+    @FXML
+    private ToggleButton create_activity_button;
 
     public ActivityList activitylist = new ActivityList();
 
@@ -120,6 +127,8 @@ public class Controller_new_task_view implements Initializable {
     }
     public void make_new_activity() {
         create_new_activity.setVisible(!create_new_activity.isVisible());
+        new_activity_label.setVisible(!new_activity_label.isVisible());
+        
     }
 
     public void create_new_activity() {
@@ -145,6 +154,7 @@ public class Controller_new_task_view implements Initializable {
         create_new_activity.setVisible(false);
         difficulty_easy.setSelected(true);
         activity_title.clear();
+        create_activity_button.setSelected(false);
     }
 
     public void create_new_task() throws IOException {
