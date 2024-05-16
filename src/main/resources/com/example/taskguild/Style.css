@@ -36,3 +36,15 @@
 .tab-pane > .tab-header-area > .headers-region > .tab:selected >.tab-container >.focus-indicator {
   -fx-opacity: 0;
 }
+
+.newTaskArea{
+  -fx-border-color:  #401810;
+  -fx-border-width: 0 20px 0 20px;
+}
+.custom-toggle-button {
+  -fx-background-color: #5c2119; /* Default button color */
+}
+
+.custom-toggle-button:selected {
+  -fx-background-color: #4f6652; /* Selected button color */
+}
