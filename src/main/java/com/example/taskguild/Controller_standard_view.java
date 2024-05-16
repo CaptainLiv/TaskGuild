@@ -88,6 +88,15 @@ public class Controller_standard_view implements Initializable {
         Start_Application.play_music("Avatar_umziehenErstellen_Hintergrundmusik");
     }
 
+    public void switch_window_newtask() throws IOException {
+        Stage stage = (Stage) avatar_name.getScene().getWindow();
+        Start_Application.change_window("taskcreate.fxml", stage);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        stage.setFullScreenExitHint("");
+        stage.setAlwaysOnTop(true);
+    }
+
     
     
 }
