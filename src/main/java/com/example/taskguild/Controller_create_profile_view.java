@@ -1,6 +1,8 @@
 package com.example.taskguild;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -12,10 +14,13 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static javafx.application.Platform.exit;
 
 
-public class Controller_create_profile_view {
-
+public class Controller_create_profile_view implements Initializable{
     @FXML
     private ImageView view_legs;
 
@@ -103,6 +108,20 @@ public class Controller_create_profile_view {
     @FXML
     private Button confirm;
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if (Start_Application.does_profile_exists) {
+            Avatar avatar = Avatar.load();
+            view_heads.setImage(new Image(avatar.head));
+            view_legs.setImage(new Image(avatar.bottom));
+            view_tops.setImage(new Image(avatar.tops));
+            txt_avatar_name.setText(avatar.name);
+        }
+        if (txt_avatar_name.getText().length() > 3) {
+            confirm.setDisable(false);
+        }
+    }
     @FXML
     void avatar_confirm(MouseEvent event) throws IOException {
         if (txt_avatar_name.getText().length() <= 3){
@@ -111,10 +130,14 @@ public class Controller_create_profile_view {
         Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         Avatar.save(avatar);
         Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
-        Start_Application.change_window("mainframe.fxml", stage);
+        Start_Application.change_window("mainframe_v3.fxml", stage);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
+        stage.setFullScreenExitHint("");
+        stage.setAlwaysOnTop(true);
         Start_Application.mp.dispose();
         Start_Application.play_music("Hintergrundmusik(ToDo_Liste)");
-
+        Start_Application.does_profile_exists = true;
 }
 
     @FXML
@@ -162,5 +185,6 @@ public class Controller_create_profile_view {
         mediaPlayer.setVolume(0.1);
         mediaPlayer.play();
     }
+
 
 }
