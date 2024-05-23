@@ -3,7 +3,10 @@ package com.example.taskguild;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -111,6 +114,7 @@ public class Controller_create_profile_view implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
         if (Start_Application.does_profile_exists) {
             Avatar avatar = Avatar.load();
             view_heads.setImage(new Image(avatar.head));
@@ -121,13 +125,37 @@ public class Controller_create_profile_view implements Initializable{
         if (txt_avatar_name.getText().length() > 3) {
             confirm.setDisable(false);
         }
+        Avatar avatar;
+        if (Avatar.load() == null) {
+
+            avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
+        }
+        else {
+            avatar = Avatar.load();
+        }
+        if (!avatar.tutorial) {
+            Alert characterScreen = new Alert(Alert.AlertType.NONE);
+            characterScreen.setTitle("Alert");
+            ButtonType type = new ButtonType("OK", ButtonData.OK_DONE);
+            characterScreen.setContentText("Welcome, adventurer! Time to sculpt your character and give them a name above! When you're ready, hit DONE.");
+            characterScreen.getDialogPane().getButtonTypes().add(type);
+            characterScreen.showAndWait();
+        }
+        
     }
     @FXML
     void avatar_confirm(MouseEvent event) throws IOException {
         if (txt_avatar_name.getText().length() <= 3){
             confirm.setDisable(true);
         }
-        Avatar avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
+        Avatar avatar;
+        if (Avatar.load() == null) {
+
+            avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
+        }
+        else {
+            avatar = Avatar.load();
+        }
         Avatar.save(avatar);
         Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
         Start_Application.change_window("mainframe_v3.fxml", stage);

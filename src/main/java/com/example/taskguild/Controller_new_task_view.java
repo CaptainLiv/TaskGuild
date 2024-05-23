@@ -1,5 +1,6 @@
 package com.example.taskguild;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +16,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class Controller_new_task_view implements Initializable {
@@ -191,11 +194,12 @@ public class Controller_new_task_view implements Initializable {
             new_todo = new Todo(task_title.getText(), selected_activity.name, task_description.getText(), Type.Normal, selected_activity.difficulty);
         }
         else if (select_time_task.isSelected()) {
-            new_todo = new Todo(task_title.getText(), selected_activity.name, task_description.getText(), Type.Normal, selected_activity.difficulty);
-            new_todo.endDate = enddate.getValue().toString();
+            new_todo = new Todo(task_title.getText(), selected_activity.name, task_description.getText(), Type.Time, selected_activity.difficulty);
+            new_todo.minutes = Integer.parseInt(minutes.getText());
+            new_todo.hours = Integer.parseInt(hours.getText());
         }
         else {
-            new_todo = new Todo(task_title.getText(), selected_activity.name, task_description.getText(), Type.Normal, selected_activity.difficulty);
+            new_todo = new Todo(task_title.getText(), selected_activity.name, task_description.getText(), Type.Daily, selected_activity.difficulty);
             String days = "";
             if(monday.isSelected() ) {
                 days += "Monday,";
@@ -220,6 +224,11 @@ public class Controller_new_task_view implements Initializable {
             }
             new_todo.Day = days.split(",");
         }
+        File file = new File("src/main/resources/com/example/taskguild/musik/Task_hinzugefügt (1).mp3");
+        Media media = new Media(file.toURI().toString());
+        MediaPlayer mp = new MediaPlayer(media);
+        mp.setVolume(0.2);
+        mp.play();
         todolist.add_item(new_todo);
         Todoliste.save(todolist);
         Stage stage = (Stage) task_title.getScene().getWindow();
@@ -228,5 +237,6 @@ public class Controller_new_task_view implements Initializable {
         stage.setResizable(false);
         stage.setFullScreenExitHint("");
         stage.setAlwaysOnTop(true);
+
     }
 }

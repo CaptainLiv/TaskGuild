@@ -21,12 +21,10 @@ public class Todoliste {
     public static void save(Todoliste todolist) {
                 Gson gson = new Gson();
                 String json = gson.toJson(todolist);
-                System.out.println(json);
                 try {
                         FileWriter myWriter = new FileWriter(filepath_todolist);
                         myWriter.write(json);
                         myWriter.close();
-                        System.out.println("Successfully wrote to the file.");
                 } catch (IOException e) {
                         System.out.println("An error occurred.");
                         e.printStackTrace();

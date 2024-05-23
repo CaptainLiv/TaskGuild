@@ -2,9 +2,14 @@ package com.example.taskguild;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 import com.example.taskguild.Todo.Type;
 import com.google.gson.Gson;
+
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class Avatar {
         public String name;
@@ -13,6 +18,7 @@ public class Avatar {
         public String tops;
         public Attribut attributes;
         public int xp;
+        public Boolean tutorial;
         public int xp_needed;
         public int level;
         public int skill_orbs;
@@ -29,6 +35,7 @@ public class Avatar {
                 this.xp_needed = 100;
                 this.skill_orbs = 0;
                 this.head = head;
+                this.tutorial = false;
                 this.bottom = bottom;
                 this.tops = tops;
                 this.attributes = new Attribut(0,0,0,0,0,0,0);
@@ -83,46 +90,68 @@ public class Avatar {
         }
 
         public void check_level_up() {
-                Avatar avatar = Avatar.load();
-                if (avatar.xp >= avatar.xp_needed) {
-                        if (avatar.xp - avatar.xp_needed > 0)
+
+                System.out.println(xp + " XP Needed:" + xp_needed);
+                if (xp >= xp_needed) {
+                        System.out.println("oask");
+                        if (xp - xp_needed > 0)
                         {
-                                avatar.xp = avatar.xp- avatar.xp_needed;
+                                System.out.println("HALLO");
+                                xp = xp- xp_needed;
                         } 
                         else {
-                                avatar.xp = 0;
+                                System.out.println("else");
+                                xp = 0;
                         }
-                        avatar.level = avatar.level + 1;
-                        
-                        double x = avatar.xp_needed + avatar.xp_needed * 0.25;
-                        avatar.xp_needed = (int)x;
-                        avatar.skill_orbs = avatar.skill_orbs + 1;
-                        if (avatar.level % 5 == 0) {
-                                avatar.skill_orbs = avatar.skill_orbs + 2;
+                        level = level + 1;
+                        System.out.println("lvl  " + level);
+                        double x = xp_needed + xp_needed * 0.25;
+                        xp_needed = (int)x;
+                        skill_orbs = skill_orbs + 1;
+                        if (level % 5 == 0) {
+                                skill_orbs = skill_orbs + 2;
                         }
-                        Avatar.save(avatar);
-                        Controller_standard_view.get_skillorbs(avatar.skill_orbs);
+                        Controller_standard_view.get_skillorbs(skill_orbs);
+                        File file = new File("src/main/resources/com/example/taskguild/musik/Level_UP_Sound.mp3");
+                        Media media = new Media(file.toURI().toString());
+                        MediaPlayer mp = new MediaPlayer(media);
+                        mp.setVolume(0.2);
+                        mp.play();
                 }
 
         }
 
-        public void task_completed(int difficulty, Type task_type) {
-                switch(difficulty) {
-                        case 1: if (task_type.toString() == "Simple") {
-                                        xp = xp + attributes.intelligence + 1;
-                                } else {
-                                       xp = xp + attributes.intelligence + 2; 
+        public void task_completed(int difficulty, Type task_type, String time, int minutes, int hours) {
+                
+                switch(task_type.ordinal()) {
+                        //Normal
+                        case 0: xp = xp + 10 + 5 * difficulty;
+                        //Daily
+                        case 1: xp = xp + 10 + 5 * difficulty;
+                        //Time
+                        case 2: String[] x = time.split(":");
+                                int start_hours = Integer.parseInt(x[0]);
+                                int start_minutes = Integer.parseInt(x[1]);
+
+                                LocalTime endtime = LocalTime.now();
+                                endtime = endtime.minusHours(start_hours);
+                                endtime = endtime.minusMinutes(start_minutes);
+
+                                String[] y = endtime.toString().split(":");
+                                int end_hours = Integer.parseInt(x[0]);
+                                int end_minutes = Integer.parseInt(x[1]);
+                                int needed_minutes = end_hours * 60 + end_minutes;
+                                int expected_minutes = minutes + hours * 60;
+
+                                if (expected_minutes - needed_minutes > 0) {
+
+                                        xp = xp + expected_minutes + (expected_minutes - needed_minutes);
                                 }
-                        case 2: if (task_type.toString() == "Simple") {
-                                        xp = xp + attributes.intelligence + 1 * difficulty;
-                                } else {
-                                       xp = xp + attributes.intelligence + 2 *difficulty; 
+                                else {
+                                        xp = xp + expected_minutes;
                                 }
-                        case 3: if (task_type.toString() == "Simple") {
-                                        xp = xp + attributes.intelligence + 1 * difficulty;
-                                } else {
-                                       xp = xp + attributes.intelligence + 2 *difficulty; 
-                                }
+
+                                
                 }
                 check_level_up();
         }

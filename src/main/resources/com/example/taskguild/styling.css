@@ -2,6 +2,27 @@
     -fx-background-color:#EAEEF4;
 }
 
+.middle_box {
+    -fx-min-width: 550px;
+    -fx-min-height: 178px;
+}
+
+.btn_complete {
+    -fx-background-color:  #4f6652;
+    -fx-margin-top: 100px;
+    -fx-cursor: hand;
+}
+
+.btn_delete {
+    -fx-background-color:  #5c2119;
+    fx-margin-top: 100px;
+    -fx-cursor: hand;
+}
+
+.task_description {
+    -fx-font-family: 'Arial Narrow';
+    -fx-font-size: 21;
+}
 .task_info {
     -fx-font-family: 'Arial Black';
     -fx-font-size: 21;
@@ -9,8 +30,10 @@
 .deadline {
     -fx-font-family: 'Bodoni MT Black';
     -fx-font-size: 37;
+    -fx-min-height: 178px;
+    -fx-min-width: 220px;
 }
-.task_space{
+.hbox {
     -fx-background-color:#4f6652;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
@@ -18,6 +41,12 @@
     -fx-border-style: solid;
     -fx-min-width: 81em;
     -fx-min-height: 178px;
+}
+.task_space{
+
+    -fx-min-width: 81em;
+    -fx-min-height: 300px;
+    -fx-margin: 200px;
 }
 .side_ankerpane{
     -fx-background-color:#ac4a31;

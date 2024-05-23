@@ -7,14 +7,15 @@ public class Todo {
     public enum Type {
         Normal,
         Daily,
-        Time
+        Time 
     } 
     public int ID;
     public String name;
     public String activity_name;
     public String description;
     public String startDate;
-    public String endDate;
+    public int minutes;
+    public int hours;
     public boolean is_done;
     public Type type;
     public int difficulty;
@@ -23,7 +24,7 @@ public class Todo {
 
     public Todo(String name, String activity_name, String description, Type type, int difficulty) {
         
-        this.startDate = LocalDateTime.now().toString();
+        this.startDate = LocalTime.now().toString();
         this.activity_name = activity_name;
         this.name = name;
         this.description = description;
