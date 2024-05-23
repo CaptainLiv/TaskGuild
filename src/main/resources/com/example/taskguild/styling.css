@@ -2,6 +2,23 @@
     -fx-background-color:#EAEEF4;
 }
 
+.task_info {
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 21;
+}
+.deadline {
+    -fx-font-family: 'Bodoni MT Black';
+    -fx-font-size: 37;
+}
+.task_space{
+    -fx-background-color:#4f6652;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-min-width: 970px;
+    -fx-min-height: 178px;
+}
 .side_ankerpane{
     -fx-background-color:#ac4a31;
     -fx-border-width: 2px 2px 2px 2px;
@@ -40,13 +57,7 @@
     -fx-border-color:#5c2119;
     
 }
-.task_space{
-    -fx-background-color:#4f6652;
-    -fx-border-width: 2px 2px 2px 2px;
-    -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
-    -fx-border-style: solid;
-}
+
 .inner_pane{
     -fx-background-color:#5c2119;
     -fx-border-width: 2px 2px 2px 2px;

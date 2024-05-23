@@ -27,12 +27,13 @@ public class Avatar {
                 this.xp = 0;
                 this.level = 1;
                 this.xp_needed = 100;
+                this.skill_orbs = 0;
                 this.head = head;
                 this.bottom = bottom;
                 this.tops = tops;
                 this.attributes = new Attribut(0,0,0,0,0,0,0);
         }
-        public Avatar(String name, int xp, int level, String head, String bottom, String tops, Attribut attributes){
+        public Avatar(String name, int xp, int level, String head, String bottom, String tops, Attribut attributes, int skill_orbs){
                 this.name = name;
                 this.xp = xp;
                 this.level = level;
@@ -40,6 +41,7 @@ public class Avatar {
                 this.bottom = bottom;
                 this.tops = tops;
                 this.attributes = attributes;
+                this.skill_orbs = skill_orbs;
         }
 
         @Override
@@ -81,22 +83,27 @@ public class Avatar {
         }
 
         public void check_level_up() {
-                if (xp >= xp_needed) {
-                        if (xp - xp_needed > 0)
+                Avatar avatar = Avatar.load();
+                if (avatar.xp >= avatar.xp_needed) {
+                        if (avatar.xp - avatar.xp_needed > 0)
                         {
-                                xp = xp- xp_needed;
+                                avatar.xp = avatar.xp- avatar.xp_needed;
                         } 
                         else {
-                                xp = 0;
+                                avatar.xp = 0;
                         }
-                        level = level + 1;
-                        double x = xp_needed + xp_needed * 0.25;
-                        xp_needed = (int)x;
-                        skill_orbs = skill_orbs + 1;
-                        if (level % 5 == 0) {
-                                skill_orbs = skill_orbs + 2;
+                        avatar.level = avatar.level + 1;
+                        
+                        double x = avatar.xp_needed + avatar.xp_needed * 0.25;
+                        avatar.xp_needed = (int)x;
+                        avatar.skill_orbs = avatar.skill_orbs + 1;
+                        if (avatar.level % 5 == 0) {
+                                avatar.skill_orbs = avatar.skill_orbs + 2;
                         }
+                        Avatar.save(avatar);
+                        Controller_standard_view.get_skillorbs(avatar.skill_orbs);
                 }
+
         }
 
         public void task_completed(int difficulty, Type task_type) {

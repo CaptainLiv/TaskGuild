@@ -225,12 +225,12 @@
       <AnchorPane style="-fx-background-color: #fae6c3;" styleClass="newTaskArea" stylesheets="@Style.css">
          <children>
 
-            <VBox fx:id="select_time" layoutX="40.0" layoutY="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox layoutX="40.0" layoutY="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
                <children>
                   <AnchorPane prefHeight="35.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" layoutY="6.0" prefHeight="27.0" prefWidth="1633.0" text="Zeit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label fx:id="time" alignment="CENTER" layoutY="6.0" prefHeight="27.0" prefWidth="1633.0" text="Zeit" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font name="Arial Black" size="18.0" />
                            </font></Label>
@@ -241,13 +241,13 @@
                         <AnchorPane prefHeight="200.0" prefWidth="664.0" style="-fx-background-color: #fae6c3;">
                            <children>
 
-                              <Label alignment="CENTER_RIGHT" layoutX="495.0" layoutY="1.0" prefHeight="154.0" prefWidth="102.0" text="Deadline">
+                              <Label fx:id="deadline" alignment="CENTER_RIGHT" layoutX="495.0" layoutY="1.0" prefHeight="154.0" prefWidth="102.0" text="Deadline" visible="false">
                                  <font>
                                     <Font name="Arial Nova" size="20.0" />
                                  </font></Label>
                            </children>
                         </AnchorPane>
-                        <GridPane prefHeight="161.0" prefWidth="342.0">
+                        <GridPane fx:id="select_time" prefHeight="161.0" prefWidth="342.0" visible="false">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.60003662109375" minWidth="10.0" prefWidth="132.3999267578125" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="346.73333740234375" minWidth="10.0" prefWidth="209.20007324218753" />
@@ -280,9 +280,9 @@
                               </Label>
                            </children>
                         </GridPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="1026.0">
+                        <AnchorPane fx:id="select_day" prefHeight="200.0" prefWidth="1026.0" visible="false">
                            <children>
-                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="644.0" text="Optional: Repeat on Every...">
+                              <Label alignment="CENTER" prefHeight="20.0" prefWidth="644.0" text="Repeat on Every...">
                                  <font>
                                     <Font name="Arial Nova" size="16.0" />
                                  </font>

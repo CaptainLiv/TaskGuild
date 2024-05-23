@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,9 +50,6 @@ public class Controller_new_task_view implements Initializable {
     private Label new_activity_label;
 
     @FXML
-    private VBox select_time;
-
-    @FXML
     private DatePicker enddate;
 
     @FXML
@@ -59,6 +57,18 @@ public class Controller_new_task_view implements Initializable {
 
     @FXML
     private ToggleButton create_activity_button;
+
+    @FXML
+    private Label deadline;
+
+    @FXML
+    private GridPane select_time;
+
+    @FXML
+    private Label time;
+
+    @FXML
+    private AnchorPane select_day;
 
     public ActivityList activitylist = new ActivityList();
 
@@ -116,13 +126,21 @@ public class Controller_new_task_view implements Initializable {
     public void change_task_type() {
         if (select_normal_task.isSelected()) {
             select_time.setVisible(false);
+            time.setVisible(false);
+            deadline.setVisible(false);
+            select_day.setVisible(false);
         }
         else if (select_time_task.isSelected()) {
             select_time.setVisible(true);
+            time.setVisible(true);
+            deadline.setVisible(true);
+            select_day.setVisible(false);
         }
         else {
-            // Daily Task -> Monday... muss angezeigt werden (Task wird jeden Montag gemacht)
             select_time.setVisible(false);
+            deadline.setVisible(false);
+            time.setVisible(true);
+            select_day.setVisible(true);
         }
     }
     public void make_new_activity() {
