@@ -103,7 +103,7 @@
                                              <children>
                                                 <HBox prefHeight="178.0" prefWidth="842.0" spacing="3.0">
                                                    <children>
-                                                      <Label prefHeight="177.0" prefWidth="169.0" text="Deadline">
+                                                      <Label prefHeight="177.0" prefWidth="169.0" styleClass="deadline" text="Deadline">
                                                          <font>
                                                             <Font name="Bodoni MT Black" size="37.0" />
                                                          </font>
