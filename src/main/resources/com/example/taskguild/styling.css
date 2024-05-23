@@ -16,7 +16,7 @@
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-border-style: solid;
-    -fx-min-width: 970px;
+    -fx-min-width: 81em;
     -fx-min-height: 178px;
 }
 .side_ankerpane{
