@@ -3,6 +3,7 @@ package com.example.taskguild;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 
@@ -25,7 +26,7 @@ public class Start_Application extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         play_music("Avatar_umziehenErstellen_Hintergrundmusik");
-
+        
 
         //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
          String view = "character_creator_v3.fxml";
@@ -61,6 +62,8 @@ public class Start_Application extends Application {
         stage.setAlwaysOnTop(true);
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         stage.setScene(scene);
+        File iconFile = new File("src/main/resources/com/example/taskguild/assets/bg/icon.png");
+        stage.getIcons().add(new Image(iconFile.toURI().toString()));
         stage.show();
     }
 
