@@ -133,15 +133,6 @@ public class Controller_create_profile_view implements Initializable{
         else {
             avatar = Avatar.load();
         }
-        if (!avatar.tutorial) {
-            Alert characterScreen = new Alert(Alert.AlertType.NONE);
-            characterScreen.setTitle("Alert");
-            ButtonType type = new ButtonType("OK", ButtonData.OK_DONE);
-            characterScreen.setContentText("Welcome, adventurer! Time to sculpt your character and give them a name above! When you're ready, hit DONE.");
-            characterScreen.getDialogPane().getButtonTypes().add(type);
-            characterScreen.showAndWait();
-        }
-        
     }
     @FXML
     void avatar_confirm(MouseEvent event) throws IOException {
@@ -166,6 +157,16 @@ public class Controller_create_profile_view implements Initializable{
         Start_Application.mp.dispose();
         Start_Application.play_music("Hintergrundmusik(ToDo_Liste)");
         Start_Application.does_profile_exists = true;
+        if(!avatar.tutorial){
+            Start_Application.popups_open(1);
+            Start_Application.popups_open(2);
+            Start_Application.popups_open(3);
+            Start_Application.popups_open(4);
+            Start_Application.popups_open(5);
+            Start_Application.popups_open(6);
+            avatar.tutorial = true;
+            Avatar.save(avatar);
+        }
 }
 
     @FXML

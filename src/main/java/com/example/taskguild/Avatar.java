@@ -18,7 +18,7 @@ public class Avatar {
         public String tops;
         public Attribut attributes;
         public int xp;
-        public Boolean tutorial;
+        public Boolean tutorial=false;
         public int xp_needed;
         public int level;
         public int skill_orbs;
