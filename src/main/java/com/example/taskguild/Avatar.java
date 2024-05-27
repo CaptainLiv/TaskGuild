@@ -18,7 +18,7 @@ public class Avatar {
         public String tops;
         public Attribut attributes;
         public int xp;
-        public Boolean tutorial=false;
+        public Boolean tutorial =false;
         public int xp_needed;
         public int level;
         public int skill_orbs;
@@ -35,7 +35,6 @@ public class Avatar {
                 this.xp_needed = 100;
                 this.skill_orbs = 0;
                 this.head = head;
-                this.tutorial = false;
                 this.bottom = bottom;
                 this.tops = tops;
                 this.attributes = new Attribut(0,0,0,0,0,0,0);

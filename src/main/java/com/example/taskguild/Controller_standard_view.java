@@ -264,7 +264,10 @@ public class Controller_standard_view implements Initializable {
 
 
     public void switch_window() throws IOException {
+        System.out.println(avatar.tutorial+"");
+        update_avatar();
         Avatar.save(avatar);
+        System.out.println(avatar.tutorial+"");
         Stage stage = (Stage) avatar_name.getScene().getWindow();
         Start_Application.change_window("character_creator_v3.fxml", stage);
         stage.setFullScreen(true);

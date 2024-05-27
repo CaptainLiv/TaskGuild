@@ -127,10 +127,11 @@ public class Controller_create_profile_view implements Initializable{
         }
         Avatar avatar;
         if (Avatar.load() == null) {
-
+            System.out.println(2);
             avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         }
         else {
+            System.out.println(1);
             avatar = Avatar.load();
         }
     }
@@ -141,10 +142,11 @@ public class Controller_create_profile_view implements Initializable{
         }
         Avatar avatar;
         if (Avatar.load() == null) {
-
+            System.out.println(3);
             avatar = new Avatar(txt_avatar_name.getText(), view_heads.getImage().getUrl(), view_legs.getImage().getUrl(), view_tops.getImage().getUrl());
         }
         else {
+            System.out.println(4);
             avatar = Avatar.load();
         }
         Avatar.save(avatar);
@@ -166,6 +168,7 @@ public class Controller_create_profile_view implements Initializable{
             Start_Application.popups_open(6);
             avatar.tutorial = true;
             Avatar.save(avatar);
+            System.out.println(avatar.tutorial);
         }
 }
 

@@ -34,6 +34,7 @@ public class Start_Application extends Application {
         play_music("Avatar_umziehenErstellen_Hintergrundmusik");
 
         Avatar avatar = new Avatar();
+        System.out.println(avatar.tutorial);
         //  Start methode des Fenster mit dem jeweiling Fxml je nach existens der Profile Datei
          String view = "character_creator_v3.fxml";
          //     Hier Checken ob Todoliste existiert
