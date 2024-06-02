@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
@@ -96,7 +95,6 @@ public class Start_Application extends Application {
         }
         return does_profile_exists;
     }
-
     public static void play_music(String path) {
         File file = new File("src/main/resources/com/example/taskguild/musik/" + path + ".mp3");
         Media media = new Media(file.toURI().toString());
@@ -125,6 +123,8 @@ public class Start_Application extends Application {
     public static void popups_open(int popupnummer){
         ButtonType type = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        File iconFilepoup = new File("src/main/resources/com/example/taskguild/assets/bg/icon.png");
+        Stage stage;
         switch (popupnummer){
             case 0:
                 Alert characterScreen = new Alert(Alert.AlertType.NONE);
@@ -132,6 +132,8 @@ public class Start_Application extends Application {
                 characterScreen.setContentText("Welcome, adventurer! Time to sculpt your character and give them a name above! When you're ready, hit DONE.");
                 characterScreen.getDialogPane().getButtonTypes().add(type);
                 characterScreen.initOwner(hauptstage);
+                stage = (Stage) characterScreen.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 characterScreen.showAndWait();
                 break;
             case 1:
@@ -140,6 +142,8 @@ public class Start_Application extends Application {
                 firstMain.setTitle("Information");
                 firstMain.setContentText("Congratulations! You've crafted your character! Now, a quick intro before the real fun begins!");
                 firstMain.getDialogPane().getButtonTypes().add(type);
+                stage = (Stage) firstMain.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 firstMain.showAndWait();
                 break;
             case 2:
@@ -150,6 +154,8 @@ public class Start_Application extends Application {
                 mirrorPopup.getDialogPane().getButtonTypes().add(type);
                 mirrorPopup.setX(bounds.getMaxX() - 1750);
                 mirrorPopup.setY(bounds.getMaxY() - 400);
+                stage = (Stage) mirrorPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 mirrorPopup.showAndWait();
                 break;
             case 3:
@@ -160,6 +166,8 @@ public class Start_Application extends Application {
                 levelPopup.getDialogPane().getButtonTypes().add(type);
                 levelPopup.setX(bounds.getMaxX() - 1750);
                 levelPopup.setY(bounds.getMaxY() - 600);
+                stage = (Stage) levelPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 levelPopup.showAndWait();
 
                 break;
@@ -171,6 +179,8 @@ public class Start_Application extends Application {
                 skillPopup.getDialogPane().getButtonTypes().add(type);
                 skillPopup.setX(bounds.getMaxX() - 450);
                 skillPopup.setY(bounds.getMaxY() - 550);
+                stage = (Stage) skillPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 skillPopup.showAndWait();
 
                 break;
@@ -180,6 +190,8 @@ public class Start_Application extends Application {
                 taskPopup.setTitle("Alert");
                 taskPopup.setContentText("And here's the heart of it all, the tasks! Every mission completed brings you closer to the next level.");
                 taskPopup.getDialogPane().getButtonTypes().add(type);
+                stage = (Stage) taskPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 taskPopup.showAndWait();
                 break;
             case 6:
@@ -191,6 +203,8 @@ public class Start_Application extends Application {
                 taskAddPopup.getDialogPane().getButtonTypes().add(type);
                 taskAddPopup.setX(bounds.getMaxX() - 1180);
                 taskAddPopup.setY(bounds.getMaxY() - 300);
+                stage = (Stage) taskAddPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 taskAddPopup.showAndWait();
                 break;
         }
