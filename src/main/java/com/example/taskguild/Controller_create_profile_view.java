@@ -111,6 +111,7 @@ public class Controller_create_profile_view implements Initializable{
     @FXML
     private Button confirm;
 
+    Avatar avatar;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -140,6 +141,7 @@ public class Controller_create_profile_view implements Initializable{
         if (txt_avatar_name.getText().length() <= 3){
             confirm.setDisable(true);
         }
+
         Avatar avatar;
         if (Avatar.load() == null) {
             System.out.println(3);
@@ -148,6 +150,10 @@ public class Controller_create_profile_view implements Initializable{
         else {
             System.out.println(4);
             avatar = Avatar.load();
+            avatar.name = txt_avatar_name.getText();
+            avatar.head = view_heads.getImage().getUrl();
+            avatar.tops = view_tops.getImage().getUrl();
+            avatar.bottom = view_legs.getImage().getUrl();
         }
         Avatar.save(avatar);
         Stage stage = (Stage) txt_avatar_name.getScene().getWindow();
