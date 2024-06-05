@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
@@ -96,7 +95,6 @@ public class Start_Application extends Application {
         }
         return does_profile_exists;
     }
-
     public static void play_music(String path) {
         File file = new File("src/main/resources/com/example/taskguild/musik/" + path + ".mp3");
         Media media = new Media(file.toURI().toString());
@@ -125,72 +123,88 @@ public class Start_Application extends Application {
     public static void popups_open(int popupnummer){
         ButtonType type = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
         Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        File iconFilepoup = new File("src/main/resources/com/example/taskguild/assets/bg/icon.png");
+        Stage stage;
         switch (popupnummer){
             case 0:
                 Alert characterScreen = new Alert(Alert.AlertType.NONE);
-                characterScreen.setTitle("Information");
+                characterScreen.setTitle("Tutorial");
                 characterScreen.setContentText("Welcome, adventurer! Time to sculpt your character and give them a name above! When you're ready, hit DONE.");
                 characterScreen.getDialogPane().getButtonTypes().add(type);
                 characterScreen.initOwner(hauptstage);
+                stage = (Stage) characterScreen.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 characterScreen.showAndWait();
                 break;
             case 1:
                 //erstermal mainscreen popup
                 Alert firstMain = new Alert(Alert.AlertType.NONE);
-                firstMain.setTitle("Information");
+                firstMain.setTitle("Tutorial");
                 firstMain.setContentText("Congratulations! You've crafted your character! Now, a quick intro before the real fun begins!");
                 firstMain.getDialogPane().getButtonTypes().add(type);
+                stage = (Stage) firstMain.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 firstMain.showAndWait();
                 break;
             case 2:
                 //popup für den Spiegel
                 Alert mirrorPopup = new Alert(Alert.AlertType.NONE);
-                mirrorPopup.setTitle("Alert");
+                mirrorPopup.setTitle("Tutorial");
                 mirrorPopup.setContentText("Behold the mirror, where you can tweak your character's appearance anytime you desire!");
                 mirrorPopup.getDialogPane().getButtonTypes().add(type);
                 mirrorPopup.setX(bounds.getMaxX() - 1750);
                 mirrorPopup.setY(bounds.getMaxY() - 400);
+                stage = (Stage) mirrorPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 mirrorPopup.showAndWait();
                 break;
             case 3:
                 //popup für die Levelanzeige
                 Alert levelPopup = new Alert(Alert.AlertType.NONE);
-                levelPopup.setTitle("Alert");
+                levelPopup.setTitle("Tutorial");
                 levelPopup.setContentText("Behold your level gauge! Completing tasks fills it with XP. Level up and earn Skill Orbs to enhance your abilities!");
                 levelPopup.getDialogPane().getButtonTypes().add(type);
                 levelPopup.setX(bounds.getMaxX() - 1750);
                 levelPopup.setY(bounds.getMaxY() - 600);
+                stage = (Stage) levelPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 levelPopup.showAndWait();
 
                 break;
             case 4:
                 //popup für die Skillanzeige
                 Alert skillPopup = new Alert(Alert.AlertType.NONE);
-                skillPopup.setTitle("Alert");
+                skillPopup.setTitle("Tutorial");
                 skillPopup.setContentText("Here's your skill display. Leveling up unlocks exciting features like expeditions for rare items!");
                 skillPopup.getDialogPane().getButtonTypes().add(type);
                 skillPopup.setX(bounds.getMaxX() - 450);
                 skillPopup.setY(bounds.getMaxY() - 550);
+                stage = (Stage) skillPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 skillPopup.showAndWait();
 
                 break;
             case 5:
                 //popup für die Taskanzeige
                 Alert taskPopup = new Alert(Alert.AlertType.NONE);
-                taskPopup.setTitle("Alert");
+                taskPopup.setTitle("Tutorial");
                 taskPopup.setContentText("And here's the heart of it all, the tasks! Every mission completed brings you closer to the next level.");
                 taskPopup.getDialogPane().getButtonTypes().add(type);
+                stage = (Stage) taskPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 taskPopup.showAndWait();
                 break;
             case 6:
 
                 //popup für das Task hinzufügen
                 Alert taskAddPopup = new Alert(Alert.AlertType.NONE);
-                taskAddPopup.setTitle("Alert");
+                taskAddPopup.setTitle("Tutorial");
                 taskAddPopup.setContentText("Hit the plus sign to add various types of tasks. Remember, the tougher the task, the more XP you'll earn!");
                 taskAddPopup.getDialogPane().getButtonTypes().add(type);
                 taskAddPopup.setX(bounds.getMaxX() - 1180);
                 taskAddPopup.setY(bounds.getMaxY() - 300);
+                stage = (Stage) taskAddPopup.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 taskAddPopup.showAndWait();
                 break;
         }
