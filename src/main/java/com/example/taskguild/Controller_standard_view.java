@@ -232,13 +232,12 @@ public class Controller_standard_view implements Initializable {
             hbox.getStyleClass().add("hbox");
             pane.getChildren().add(hbox);
             pane.getStyleClass().add("task_space");
-            
             todolist_view.getChildren().add(pane);
         }
     }
   
     public void complete_task(Todo todo) {
-        // todolist.todolist.remove(todo);
+        todolist.todolist.remove(todo);
         avatar.task_completed(todo.difficulty, todo.type, todo.startDate, todo.minutes, todo.hours);
         Avatar.save(avatar);
         update_avatar();
