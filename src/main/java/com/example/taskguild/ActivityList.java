@@ -23,12 +23,10 @@ public class ActivityList {
     public static void save(ActivityList activitylist) {
                 Gson gson = new Gson();
                 String json = gson.toJson(activitylist);
-                System.out.println(json);
                 try {
                         FileWriter myWriter = new FileWriter(filepath_activitylist);
                         myWriter.write(json);
                         myWriter.close();
-                        System.out.println("Successfully wrote to the file.");
                 } catch (IOException e) {
                         System.out.println("An error occurred.");
                         e.printStackTrace();

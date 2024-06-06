@@ -44,9 +44,7 @@ public class Start_Application extends Application {
                 // view = "create-profile-view.fxml";
                 mp.dispose();
                 play_music("Hintergrundmusik(ToDo_Liste)");
-             System.out.println(view);
          }else{
-             System.out.println(view);
          }
          change_window(view, stage);
          if (!avatar.tutorial) {
@@ -85,7 +83,6 @@ public class Start_Application extends Application {
                }
             }catch (IOException e){
                 e.printStackTrace();
-                System.out.println("aisjd");
             }
         }
         else {
@@ -202,7 +199,7 @@ public class Start_Application extends Application {
                 taskAddPopup.setContentText("Hit the plus sign to add various types of tasks. Remember, the tougher the task, the more XP you'll earn!");
                 taskAddPopup.getDialogPane().getButtonTypes().add(type);
                 taskAddPopup.setX(bounds.getMaxX() - 1180);
-                taskAddPopup.setY(bounds.getMaxY() - 300);
+                taskAddPopup.setY(bounds.getMaxY() - 900);
                 stage = (Stage) taskAddPopup.getDialogPane().getScene().getWindow();
                 stage.getIcons().add(new Image(iconFilepoup.toURI().toString()));
                 taskAddPopup.showAndWait();

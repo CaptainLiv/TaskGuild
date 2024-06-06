@@ -87,20 +87,15 @@ public class Avatar {
 
         public void check_level_up() {
 
-                System.out.println(xp + " XP Needed:" + xp_needed);
                 if (xp >= xp_needed) {
-                        System.out.println("oask");
                         if (xp - xp_needed > 0)
                         {
-                                System.out.println("HALLO");
                                 xp = xp- xp_needed;
                         } 
                         else {
-                                System.out.println("else");
                                 xp = 0;
                         }
                         level = level + 1;
-                        System.out.println("lvl  " + level);
                         double x = xp_needed + xp_needed * 0.25;
                         xp_needed = (int)x;
                         skill_orbs = skill_orbs + 1;
@@ -113,6 +108,9 @@ public class Avatar {
                         MediaPlayer mp = new MediaPlayer(media);
                         mp.setVolume(0.2);
                         mp.play();
+                        if (xp > xp_needed) {
+                                check_level_up();
+                        }
                 }
 
         }
@@ -120,11 +118,8 @@ public class Avatar {
         public void task_completed(int difficulty, Type task_type, String time, int minutes, int hours) {
                 
                 switch(task_type.ordinal()) {
-                        //Normal
                         case 0: xp = xp + 10 + 5 * difficulty;
-                        //Daily
                         case 1: xp = xp + 10 + 5 * difficulty;
-                        //Time
                         case 2: String[] x = time.split(":");
                                 int start_hours = Integer.parseInt(x[0]);
                                 int start_minutes = Integer.parseInt(x[1]);
